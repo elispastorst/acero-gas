@@ -455,6 +455,7 @@
             align-items: center;
             gap: 10px;
             transition: 0.2s;
+            cursor: pointer;
         }
         .btn-accion:hover {
             background: #b48b4c;
@@ -669,7 +670,8 @@
                 <a href="tel:3124672533" class="btn-accion"><i class="fas fa-phone-alt"></i> Llamar</a>
                 <a href="https://wa.me/573124672533" target="_blank" class="btn-accion"><i class="fab fa-whatsapp"></i> WhatsApp</a>
                 <a href="https://maps.google.com/?q=Calib+5+%238-31+B+Cúcuta" target="_blank" class="btn-accion"><i class="fas fa-map-marker-alt"></i> Cómo llegar</a>
-                <a href="#" class="btn-accion"><i class="fas fa-share-alt"></i> Compartir</a>
+                <!-- BOTÓN COMPARTIR CON WEB SHARE API - AGREGADO Y FUNCIONAL -->
+                <a onclick="compartirPagina()" class="btn-accion" style="cursor: pointer;"><i class="fas fa-share-alt"></i> Compartir</a>
             </div>
 
             <div class="footer-grid">
@@ -720,6 +722,32 @@
 
         // ANIMACIÓN EXTRA AL LOGO
         console.log("Logo cargando con ruta: /logo.png");
+        
+        // ===== WEB SHARE API - BOTÓN COMPARTIR =====
+        function compartirPagina() {
+            const url = 'https://acero-gas.netlify.app';
+            const titulo = 'Acero & Gas · SERGIO&FABIO FORERO';
+            const texto = 'Industria Metalmecánica · Fabricación en acero inoxidable · Marmitas, Despulpadores, Peladoras · Cúcuta, Colombia';
+
+            if (navigator.share) {
+                navigator.share({
+                    title: titulo,
+                    text: texto,
+                    url: url
+                }).catch((error) => {
+                    if (error.name !== 'AbortError') {
+                        alert('No se pudo compartir. Puede copiar el enlace manualmente.');
+                    }
+                });
+            } else {
+                // Fallback para navegadores sin Web Share API
+                navigator.clipboard.writeText(url).then(() => {
+                    alert('✅ Enlace copiado al portapapeles. ¡Compártelo donde quieras!');
+                }).catch(() => {
+                    alert('📋 Copia este enlace: ' + url);
+                });
+            }
+        }
     </script>
 </body>
 </html>
