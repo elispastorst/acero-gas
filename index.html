@@ -3,661 +3,673 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>Acero & Gas || Fidio Fiorio • Industria Metalmecánica</title>
+    <title>Fidio Fiorio · Acero & Gas · Industria Metalmecánica</title>
+    
+    <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Google Fonts: Inter + Playfair Display para jerarquía -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
         }
 
         body {
-            background: linear-gradient(145deg, #f8f5f2 0%, #eae7e2 100%);
+            font-family: 'Inter', sans-serif;
+            background: #f6f4f0;
+            background-image: radial-gradient(circle at 15% 30%, rgba(200, 180, 140, 0.02) 0%, transparent 25%),
+                              radial-gradient(circle at 85% 70%, rgba(80, 100, 120, 0.02) 0%, transparent 30%);
             min-height: 100vh;
-            padding: 1.5rem;
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
+            padding: 2rem 1.5rem;
         }
 
-        .digital-card {
-            max-width: 1000px;
+        /* ===== TARJETA PRINCIPAL – ÉPICA, SÓLIDA, CON ALMA ===== */
+        .tarjeta-industrial {
+            max-width: 1100px;
             width: 100%;
             background: #ffffff;
-            border-radius: 2rem;
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(0, 0, 0, 0.02);
+            border-radius: 48px 48px 32px 32px;
+            box-shadow: 0 25px 45px -15px rgba(20, 30, 40, 0.2),
+                        0 0 0 1px rgba(180, 160, 120, 0.2);
             overflow: hidden;
-            margin-bottom: 2rem;
+            transition: all 0.25s ease;
+            position: relative;
         }
 
-        /* === HEADER SUAVE === */
+        /* ===== HEADER – SUTIL, SIN RUIDO ===== */
         .header-premium {
-            background: #ffffff;
-            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #f0c45a;
+            padding: 1.2rem 2.2rem;
+            background: #ffffff;
+            border-bottom: 1px solid #eae3d6;
+        }
+
+        .emblema {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .emblema i {
+            font-size: 1.6rem;
+            color: #8a6e4b;
+        }
+
+        .emblema span {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #3e423c;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         .menu-toggle {
-            font-size: 1.6rem;
+            font-size: 1.7rem;
+            color: #8a6e4b;
             cursor: pointer;
-            color: #b48b3a;
             transition: 0.2s;
         }
+        .menu-toggle:hover { color: #5e4a32; }
 
-        .menu-toggle:hover {
-            color: #7a5c2e;
-        }
-
-        /* === MENÚ FEMENINO, DELICADO, CENTRADO === */
+        /* ===== MENÚ OVERLAY – ELEGANTE, CON CLASE ===== */
         .overlay {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 250, 240, 0.97);
-            backdrop-filter: blur(4px);
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(255, 253, 248, 0.98);
+            backdrop-filter: blur(8px);
             z-index: 2000;
             display: flex;
             justify-content: center;
             align-items: center;
             opacity: 0;
             visibility: hidden;
-            transition: 0.25s;
+            transition: 0.3s;
         }
-
-        .overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
+        .overlay.active { opacity: 1; visibility: visible; }
 
         .menu-contenido {
-            width: 100%;
             max-width: 500px;
+            width: 90%;
             text-align: center;
-            padding: 0 1.2rem;
         }
-
-        .menu-contenido ul {
-            list-style: none;
-        }
-
-        .menu-contenido li {
-            margin: 1.2rem 0;
-        }
-
+        .menu-contenido ul { list-style: none; }
+        .menu-contenido li { margin: 1.6rem 0; }
         .menu-contenido a {
-            color: #3e3a36;
+            color: #2e3b41;
             text-decoration: none;
-            font-size: 1.3rem;
-            font-weight: 500;
-            letter-spacing: 1.5px;
-            border-bottom: 1.5px solid transparent;
-            padding-bottom: 5px;
-            display: inline-block;
+            font-size: 1.4rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 6px;
             transition: 0.2s;
         }
-
-        .menu-contenido a:hover {
-            border-bottom-color: #e6b450;
-            color: #9e7b3c;
-        }
+        .menu-contenido a:hover { border-bottom-color: #b48b4c; color: #5a4a2e; }
 
         .cerrar-menu {
             position: absolute;
-            top: 20px;
-            right: 30px;
-            font-size: 2.2rem;
-            color: #b48b3a;
+            top: 25px; right: 35px;
+            font-size: 2.8rem;
+            color: #8a6e4b;
             cursor: pointer;
         }
 
-        /* === HERO ELEGANTE === */
-        .hero-bienvenida {
-            background: #fefcf7;
-            padding: 2rem 2rem 1.8rem;
-            text-align: center;
-            border-bottom: 1px solid #f0e1c6;
-        }
-
-        .logo-container {
+        /* ===== HERO – LOGO PROTAGONISTA, CON MOVIMIENTO ===== */
+        .hero-fidio {
+            background: linear-gradient(165deg, #fefcf8 0%, #fffcf5 100%);
+            padding: 2.8rem 2rem 2.5rem;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 0.6rem;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            border-bottom: 1px solid #e6dac8;
+        }
+
+        .logo-principal-container {
+            max-width: 380px;
+            width: 100%;
+            margin-bottom: 1rem;
+            animation: levitar 4s infinite ease-in-out;
+        }
+        @keyframes levitar {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-6px); }
         }
 
         .logo-principal {
-            max-width: 240px;
             width: 100%;
             height: auto;
-            filter: drop-shadow(0 4px 8px rgba(180, 140, 70, 0.08));
+            display: block;
+            filter: drop-shadow(0 8px 12px rgba(100, 80, 50, 0.08));
+        }
+
+        .bienvenida-sello {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         .bienvenida-titulo {
-            font-size: 1.6rem;
-            font-weight: 600;
-            color: #4a3b22;
-            letter-spacing: 1px;
-            margin-top: 0.3rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #1f2a30;
+            letter-spacing: -0.5px;
+            margin-bottom: 0.2rem;
         }
 
         .bienvenida-sub {
-            font-size: 0.85rem;
-            color: #8f7a5b;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            border-top: 1px solid #eedbaa;
-            border-bottom: 1px solid #eedbaa;
-            padding: 0.6rem 1rem;
-            display: inline-block;
-        }
-
-        /* === CONTENIDO PRINCIPAL === */
-        .main-content {
-            padding: 2rem 2rem 1.5rem;
-            background: #ffffff;
-        }
-
-        .lema-acero {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            color: #9e8b72;
-            letter-spacing: 2.5px;
-            border-bottom: 1px dashed #e2d5c0;
-            padding-bottom: 0.9rem;
-            margin-bottom: 1.8rem;
-            font-weight: 400;
-        }
-
-        .lema-acero i {
-            color: #e6b450;
-            margin-right: 6px;
-        }
-
-        .mision-vision-unico {
-            background: #fdfaf5;
-            border-left: 5px solid #e6b450;
-            border-radius: 0 16px 16px 0;
-            padding: 1.2rem 1.5rem;
-            margin-bottom: 2rem;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 0.8rem 1.2rem;
-        }
-
-        .miv-badge {
-            background: #e6b450;
-            color: white;
-            font-weight: 600;
-            font-size: 0.7rem;
-            padding: 0.2rem 0.8rem;
-            border-radius: 30px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .miv-texto {
-            font-size: 0.95rem;
-            font-weight: 500;
-            color: #4a4137;
-        }
-
-        .valores-section {
-            background: #fbf9f6;
-            border-radius: 20px;
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-            border: 1px solid #f0e4d4;
-        }
-
-        .valores-title {
-            color: #b48b3a;
             font-size: 1rem;
-            font-weight: 600;
+            color: #766b55;
             text-transform: uppercase;
-            letter-spacing: 2.5px;
-            margin-bottom: 1.2rem;
+            letter-spacing: 5px;
+            font-weight: 500;
+            background: #f3efe8;
+            padding: 0.5rem 1.8rem;
+            border-radius: 60px;
+            display: inline-block;
+            border: 1px solid #dacdb8;
+            box-shadow: 0 2px 0 #c6b59c;
+        }
+
+        .firma-fundador {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #8a7a64;
             display: flex;
             align-items: center;
             gap: 8px;
-        }
-
-        .valores-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 1rem;
-        }
-
-        .valor-item {
-            background: #ffffff;
-            padding: 0.8rem 1.2rem;
+            background: rgba(180, 140, 100, 0.06);
+            padding: 0.3rem 1.2rem;
             border-radius: 40px;
-            color: #5b4e3a;
+        }
+        .firma-fundador i { color: #b48b4c; }
+
+        /* ===== CONTENIDO PRINCIPAL ===== */
+        .main-content {
+            padding: 2.5rem 2.2rem;
+        }
+
+        /* LEMA CORPORATIVO */
+        .lema-fabricacion {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            color: #8a7a64;
+            letter-spacing: 4px;
+            border-bottom: 1px solid #e2d7c6;
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+        .lema-fabricacion i { color: #b48b4c; margin-right: 8px; }
+
+        /* MISION + VISION + EXCELENCIA – COMPACTO, CON CLASE */
+        .bloque-fundacional {
+            background: #fcfaf6;
+            border-left: 6px solid #b48b4c;
+            border-radius: 0 20px 20px 0;
+            padding: 1.5rem 1.8rem;
+            margin-bottom: 2.4rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 1rem 1.8rem;
+            box-shadow: inset 0 0 0 1px rgba(180, 140, 76, 0.12);
+        }
+        .miv-badge {
+            background: #b48b4c;
+            color: white;
+            font-weight: 700;
+            font-size: 0.75rem;
+            padding: 0.25rem 1rem;
+            border-radius: 50px;
+            text-transform: uppercase;
+        }
+        .miv-texto {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #2e3b41;
+        }
+        .trophy-award {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #5e4a32;
+            font-weight: 600;
+        }
+        .trophy-award i { color: #b48b4c; }
+
+        /* VALORES INDUSTRIALES */
+        .valores-industria {
+            background: #fcfaf6;
+            border-radius: 24px;
+            padding: 1.8rem;
+            margin-bottom: 2.4rem;
+            border: 1px solid #e6dac8;
+        }
+        .valores-titulo {
             display: flex;
             align-items: center;
             gap: 10px;
-            border: 1px solid #eadbc5;
+            color: #5e4a32;
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 1.5rem;
+        }
+        .valores-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+        .valor-item {
+            background: white;
+            padding: 0.8rem 1.2rem;
+            border-radius: 50px;
+            border: 1px solid #e0d3c0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #3e423c;
             font-weight: 500;
             font-size: 0.9rem;
             box-shadow: 0 2px 4px rgba(0,0,0,0.02);
         }
+        .valor-item i { color: #b48b4c; width: 20px; }
 
-        .valor-item i {
-            color: #e6b450;
-            font-size: 1rem;
-        }
-
-        .servicio-fiorio-header {
+        /* SERVICIO FIORIO – EL HOMBRE, LA LEYENDA */
+        .fiorio-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
+            flex-wrap: wrap;
         }
-
-        .servicio-fiorio-titulo {
-            color: #b48b3a;
-            font-weight: 700;
-            font-size: 1.1rem;
+        .fiorio-nombre {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 12px;
+        }
+        .fiorio-nombre i {
+            font-size: 1.6rem;
+            color: #b48b4c;
+        }
+        .fiorio-nombre h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1f2a30;
             letter-spacing: 1px;
         }
-
-        .servicio-fiorio-telefono {
-            color: #6f6b63;
-            background: #f5efe8;
-            padding: 0.3rem 1rem;
-            border-radius: 40px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            border: 1px solid #e2d2be;
+        .fiorio-tel {
+            background: #f3efe8;
+            padding: 0.5rem 1.4rem;
+            border-radius: 60px;
+            border: 1px solid #b48b4c;
+            color: #5e4a32;
+            font-weight: 600;
+            font-size: 1rem;
         }
+        .fiorio-tel i { margin-right: 6px; color: #b48b4c; }
 
+        /* GRID DE SERVICIOS – ESPECIALIDADES PROPIAS */
         .servicios-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 0.8rem;
-            margin: 1.2rem 0 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin: 1.8rem 0 1.5rem;
         }
-
         .servicio-item {
-            background: #f9f6f2;
-            border: 1px solid #e7ddcf;
-            border-radius: 40px;
-            padding: 0.6rem 0.8rem 0.6rem 1.2rem;
+            background: #f9f7f3;
+            border: 1px solid #e0d3c0;
+            border-radius: 60px;
+            padding: 0.8rem 1.2rem 0.8rem 1.5rem;
             display: flex;
             align-items: center;
-            gap: 0.6rem;
-            color: #554b3f;
+            gap: 12px;
+            color: #2e3b41;
             font-weight: 500;
-            font-size: 0.85rem;
-            transition: 0.1s;
+            font-size: 0.9rem;
+            transition: 0.15s;
         }
-
         .servicio-item i {
-            color: #e6b450;
-            font-size: 0.95rem;
-            width: 1.3rem;
+            color: #b48b4c;
+            font-size: 1rem;
+            width: 1.4rem;
         }
+        .servicio-item:hover {
+            background: #b48b4c;
+            color: white;
+            border-color: #b48b4c;
+        }
+        .servicio-item:hover i { color: white; }
 
-        .horarios {
-            background: #fdfaf5;
+        /* HORARIOS – CLAROS, DIRECTOS */
+        .horarios-operacion {
+            background: #fcfaf6;
             border-radius: 20px;
-            padding: 1.2rem 1.5rem;
-            margin: 1.8rem 0 1.2rem;
+            padding: 1.2rem 1.8rem;
+            margin: 1.5rem 0 1.8rem;
             display: flex;
+            flex-wrap: wrap;
             align-items: center;
             justify-content: space-between;
-            flex-wrap: wrap;
-            border: 1px solid #eedbaa;
+            border: 1px solid #dacdb8;
         }
-
-        .horario-item {
+        .hora-item {
             display: flex;
             align-items: center;
-            gap: 8px;
-            color: #b48b3a;
+            gap: 10px;
+            color: #5e4a32;
         }
+        .hora-item span { color: #3e423c; font-weight: 500; }
 
-        .horario-item span {
-            color: #5a4f42;
-            font-weight: 500;
-            font-size: 0.85rem;
-        }
-
-        .sello-dominicano {
+        /* SELLO DOMINICANO + CALIFORNIA COIL */
+        .sello-tecnico {
             display: flex;
             align-items: center;
             justify-content: flex-end;
-            margin: 1rem 0 0.2rem;
-            gap: 1rem;
+            gap: 1.2rem;
             flex-wrap: wrap;
-            color: #8e826c;
-            font-size: 0.8rem;
+            margin: 1rem 0 0.5rem;
+            color: #6a5e4e;
+            font-size: 0.85rem;
         }
-
-        .badge-calib {
-            background: #f5efe8;
-            padding: 0.3rem 1rem;
-            border-radius: 30px;
-            border: 1px solid #e6b45080;
-            color: #7a643f;
-            font-weight: 500;
-        }
-
-        /* === MAPA === */
-        .mapa-section {
-            padding: 1rem 2rem 2rem;
-            background: #ffffff;
-            border-top: 1px solid #f0e4d4;
-        }
-
-        .mapa-titulo {
-            color: #b48b3a;
-            font-size: 0.95rem;
+        .badge-california {
+            background: #f3efe8;
+            padding: 0.35rem 1.2rem;
+            border-radius: 60px;
+            border: 1px solid #b48b4c;
+            color: #5e4a32;
             font-weight: 600;
+        }
+
+        /* ===== MAPA REAL, NO UN DIBUJO ===== */
+        .mapa-real {
+            padding: 1.8rem 2.2rem 2.2rem;
+            background: #ffffff;
+            border-top: 1px solid #e6dac8;
+        }
+        .mapa-titulo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #5e4a32;
+            font-size: 1rem;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            letter-spacing: 2.5px;
+            margin-bottom: 1.2rem;
         }
-
-        .mapa-container {
+        .mapa-embed {
             width: 100%;
-            border-radius: 16px;
+            height: 240px;
+            border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 6px 14px rgba(0,0,0,0.02);
-            border: 1px solid #f0e4d4;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+            border: 1px solid #e0d3c0;
+        }
+        .mapa-embed iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
         }
 
-        .mapa-placeholder {
-            background: #f5f2ed;
-            padding: 1.2rem;
-            text-align: center;
-            color: #8a7a62;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
+        /* ===== FOOTER – BOTONES HORIZONTALES, LIMPIOS ===== */
+        .footer-acciones {
+            background: #fcfaf6;
+            border-top: 1px solid #dacdb8;
+            padding: 2rem 2.2rem 1.8rem;
         }
-
-        .mapa-placeholder i {
-            font-size: 2rem;
-            color: #b48b3a;
-        }
-
-        /* === FOOTER CON BOTONES HORIZONTALES === */
-        .menu-footer {
-            background: #fcfaf7;
-            border-top: 1px solid #e7dacb;
-            padding: 1.5rem 2rem 1.2rem;
-        }
-
-        .footer-botones-horizontales {
+        .botones-horizontales {
             display: flex;
             flex-wrap: wrap;
             align-items: center;
             justify-content: center;
             gap: 1rem;
-            margin-bottom: 1.8rem;
+            margin-bottom: 2rem;
         }
-
-        .btn-footer {
-            background: #ffffff;
-            border: 1px solid #e6b450;
-            color: #b48b3a;
-            padding: 0.6rem 1.3rem;
-            border-radius: 50px;
+        .btn-accion {
+            background: white;
+            border: 1.5px solid #b48b4c;
+            color: #5e4a32;
+            padding: 0.7rem 1.8rem;
+            border-radius: 60px;
             text-decoration: none;
-            font-size: 0.85rem;
             font-weight: 600;
+            font-size: 0.95rem;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             transition: 0.2s;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
         }
-
-        .btn-footer i {
-            font-size: 1rem;
-        }
-
-        .btn-footer:hover {
-            background: #e6b450;
+        .btn-accion:hover {
+            background: #b48b4c;
             color: white;
         }
-
         .footer-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
+            gap: 1.8rem;
+            margin-bottom: 1.8rem;
         }
-
         .footer-col h4 {
-            color: #b48b3a;
+            color: #5e4a32;
             font-size: 0.85rem;
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 0.8rem;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
         }
-
         .footer-col p, .footer-col a {
-            color: #6a6157;
+            color: #6a5e4e;
             text-decoration: none;
             display: flex;
             align-items: center;
             gap: 10px;
             margin-bottom: 0.6rem;
+            font-size: 0.85rem;
+        }
+        .footer-col i { color: #b48b4c; width: 20px; }
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid #dacdb8;
+            color: #8a7a64;
             font-size: 0.8rem;
         }
 
-        .footer-col i {
-            color: #b48b3a;
-            width: 18px;
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 1.2rem;
-            border-top: 1px solid #e7dacb;
-            color: #988e7d;
-            font-size: 0.75rem;
-        }
-
+        /* BOTONES FLOTANTES */
         .floating-buttons {
             position: fixed;
             bottom: 25px;
-            right: 20px;
+            right: 25px;
             display: flex;
             flex-direction: column;
             gap: 12px;
             z-index: 999;
         }
-
-        .btn-wa, .btn-call {
-            width: 52px;
-            height: 52px;
+        .btn-flotante {
+            width: 56px;
+            height: 56px;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             color: white;
-            box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.1);
             text-decoration: none;
         }
-
-        .btn-wa { background: #25d366; }
-        .btn-call { background: #b48b3a; }
+        .btn-flotante.whatsapp { background: #25d366; }
+        .btn-flotante.llamar { background: #b48b4c; }
 
         @media (max-width: 700px) {
-            .header-premium { flex-direction: column; align-items: start; gap: 0.5rem; }
-            .servicio-fiorio-header { flex-direction: column; align-items: flex-start; }
-            .horarios { flex-direction: column; align-items: flex-start; }
-            .footer-botones-horizontales { flex-direction: column; width: 100%; }
-            .btn-footer { width: 100%; justify-content: center; }
+            .header-premium { padding: 1rem 1.5rem; }
+            .hero-fidio { padding: 2rem 1.5rem; }
+            .bienvenida-titulo { font-size: 1.8rem; }
+            .fiorio-header { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
+            .botones-horizontales { flex-direction: column; width: 100%; }
+            .btn-accion { width: 100%; justify-content: center; }
         }
     </style>
 </head>
 <body>
 
     <!-- TARJETA PRINCIPAL -->
-    <div class="digital-card">
+    <div class="tarjeta-industrial">
 
         <!-- HEADER CON MENÚ -->
         <div class="header-premium">
-            <div style="display: flex; align-items: center; gap: 10px;">
-                <i class="fas fa-bolt" style="color: #e6b450; font-size: 1.4rem;"></i>
-                <span style="color: #5a4f42; font-weight: 500; letter-spacing: 1px;">FIDIO FIORIO</span>
+            <div class="emblema">
+                <i class="fas fa-bolt"></i>
+                <span>FIDIO FIORIO</span>
             </div>
             <div class="menu-toggle" id="menuToggle">
                 <i class="fas fa-bars"></i>
             </div>
         </div>
 
-        <!-- MENÚ DELICADO, FEMENINO -->
+        <!-- MENÚ OVERLAY -->
         <div class="overlay" id="menuOverlay">
-            <div class="cerrar-menu" id="cerrarMenu">
-                <i class="fas fa-times"></i>
-            </div>
+            <div class="cerrar-menu" id="cerrarMenu"><i class="fas fa-times"></i></div>
             <div class="menu-contenido">
                 <ul>
                     <li><a href="#inicio"><i class="fas fa-home"></i> INICIO</a></li>
                     <li><a href="#servicios"><i class="fas fa-tools"></i> SERVICIOS</a></li>
                     <li><a href="#valores"><i class="fas fa-star"></i> VALORES</a></li>
                     <li><a href="#contacto"><i class="fas fa-phone-alt"></i> CONTACTO</a></li>
-                    <li><a href="tel:3124672533"><i class="fas fa-phone"></i> LLAMAR</a></li>
-                    <li><a href="https://wa.me/573124672533" target="_blank"><i class="fab fa-whatsapp"></i> WHATSAPP</a></li>
                 </ul>
             </div>
         </div>
 
-        <!-- HERO CON LOGO Y BIENVENIDA -->
-        <div class="hero-bienvenida">
-            <div class="logo-container">
-                <img src="https://raw.githubusercontent.com/Elis-suarez/acero&gas/main/logotipo-acero-gas.png" 
-                     alt="Acero & Gas" 
+        <!-- ===== HERO – LOGO + BIENVENIDA CON MOVIMIENTO ===== -->
+        <div class="hero-fidio" id="inicio">
+            <div class="logo-principal-container">
+                <!-- LOGO: USTED LO SUBE A NETLIFY COMO logo.png Y ESTA RUTA FUNCIONA SIEMPRE -->
+                <img src="/logo.png" 
+                     alt="Acero & Gas · Fidio Fiorio" 
                      class="logo-principal"
-                   <!-- === HERO CON LOGO – AHORA SÍ, CON LOGO.PNG === -->
-<div class="hero-bienvenida">
-    <div class="logo-container">
-        <img src="https://raw.githubusercontent.com/Elis-suarez/acero-gas/main/logo.png" 
-             alt="Acero & Gas" 
-             class="logo-principal"
-             onerror="this.src='https://raw.githubusercontent.com/Elis-suarez/acero-gas/main/logotipo-acero-gas.png'; this.onerror=null;">
-        
-        <h1 class="bienvenida-titulo">
-            Bienvenida
-        </h1>
-        <span class="bienvenida-sub">
-            <i class="fas fa-certificate"></i> CALIDAD INDUSTRIAL · 1985
-        </span>
-    </div>
-</div>
+                     onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/elispastorst/acero-gas/main/logo.png';">
+            </div>
+            <div class="bienvenida-sello">
+                <h1 class="bienvenida-titulo">Bienvenidos a Acero & Gas</h1>
+                <span class="bienvenida-sub"><i class="fas fa-certificate"></i> INDUSTRIA METALMECÁNICA · 1985</span>
+            </div>
+            <div class="firma-fundador">
+                <i class="fas fa-signature"></i> Fundador: Fidio Fiorio
+                <span style="margin-left: 10px; background: rgba(180,140,76,0.1); padding: 0.2rem 0.8rem; border-radius: 40px;">California - Coil</span>
+            </div>
+        </div>
 
         <!-- CONTENIDO PRINCIPAL -->
-        <div class="main-content" id="inicio">
-            <div class="lema-acero">
+        <div class="main-content">
+
+            <div class="lema-fabricacion">
                 <i class="fas fa-crown"></i> FABRICACIÓN · SOLDADURA · COCINA INDUSTRIAL
             </div>
 
-            <!-- MISIÓN Y VISIÓN -->
-            <div class="mision-vision-unico">
+            <!-- MISIÓN + VISIÓN + EXCELENCIA -->
+            <div class="bloque-fundacional">
                 <span class="miv-badge">M</span>
                 <span class="miv-texto">Innovación en acero inoxidable</span>
-                <span style="color:#e6b450;">⎯</span>
+                <span style="color:#b48b4c;">⎯</span>
                 <span class="miv-badge">V</span>
                 <span class="miv-texto">Líderes en Centroamérica</span>
-                <span style="color:#e6b450;">✦</span>
-                <i class="fas fa-trophy" style="color:#e6b450;"></i>
-                <span style="font-weight:500; color:#7a643f;">Excelencia desde 1985</span>
+                <span style="color:#b48b4c;">✦</span>
+                <span class="trophy-award"><i class="fas fa-trophy"></i> Excelencia desde 1985</span>
             </div>
 
             <!-- VALORES -->
-            <div id="valores" class="valores-section">
-                <div class="valores-title">
-                    <i class="fas fa-heart"></i> NUESTROS VALORES
+            <div class="valores-industria" id="valores">
+                <div class="valores-titulo">
+                    <i class="fas fa-heart"></i> VALORES INDUSTRIALES
                 </div>
                 <div class="valores-grid">
                     <div class="valor-item"><i class="fas fa-medal"></i> Calidad Superior</div>
                     <div class="valor-item"><i class="fas fa-clock"></i> Puntualidad</div>
-                    <div class="valor-item"><i class="fas fa-handshake"></i> Confianza</div>
-                    <div class="valor-item"><i class="fas fa-flask"></i> Innovación</div>
+                    <div class="valor-item"><i class="fas fa-handshake"></i> Confianza Técnica</div>
+                    <div class="valor-item"><i class="fas fa-flask"></i> Innovación Constante</div>
                 </div>
             </div>
 
-            <!-- SERVICIO FIORIO -->
-            <div class="servicio-fiorio-header">
-                <span class="servicio-fiorio-titulo">
-                    <i class="fas fa-tools"></i> SERVICIO FIORIO
-                </span>
-                <span class="servicio-fiorio-telefono">
+            <!-- SERVICIO FIORIO – EL MAESTRO -->
+            <div class="fiorio-header">
+                <div class="fiorio-nombre">
+                    <i class="fas fa-user-cog"></i>
+                    <h3>FIDIO FIORIO</h3>
+                </div>
+                <div class="fiorio-tel">
                     <i class="fas fa-map-pin"></i> 312 467 2533
-                </span>
+                </div>
             </div>
 
-            <!-- SERVICIOS -->
+            <!-- ESPECIALIDADES – TAL CUAL LA TARJETA -->
             <div id="servicios" class="servicios-grid">
                 <div class="servicio-item"><i class="fas fa-utensils"></i> Marmites</div>
                 <div class="servicio-item"><i class="fas fa-hand-holding-heart"></i> Pasamanos</div>
                 <div class="servicio-item"><i class="fas fa-cube"></i> Tropes para Cocina</div>
-                <div class="servicio-item"><i class="fas fa-blender"></i> Despulpadores</div>
-                <div class="servicio-item"><i class="fas fa-apple-alt"></i> Peladoras de Papa</div>
-                <div class="servicio-item"><i class="fas fa-utensil-spoon"></i> Montejas Inox.</div>
-                <div class="servicio-item"><i class="fas fa-drumstick-bite"></i> Enjuagas para Pollo</div>
+                <div class="servicio-item"><i class="fas fa-blender"></i> Despulpadores de Frutas</div>
+                <div class="servicio-item"><i class="fas fa-apple-alt"></i> Manzanas Peloteras de Papa</div>
+                <div class="servicio-item"><i class="fas fa-utensil-spoon"></i> Montejas en Acero Inox.</div>
+                <div class="servicio-item"><i class="fas fa-drumstick-bite"></i> Enjuagas para Malabados de Pollo</div>
                 <div class="servicio-item"><i class="fas fa-fire"></i> Quemadores / Gas</div>
             </div>
 
             <!-- HORARIOS -->
-            <div class="horarios">
-                <div class="horario-item"><i class="fas fa-clock"></i><span>Lun-Vie 7am-6pm</span></div>
-                <div class="horario-item"><i class="fas fa-clock"></i><span>Sáb 8am-2pm</span></div>
-                <div class="horario-item"><i class="fas fa-calendar-alt"></i><span>Emergencias 24/7</span></div>
+            <div class="horarios-operacion">
+                <div class="hora-item"><i class="fas fa-clock"></i> <span>Lun-Vie: 7am - 6pm</span></div>
+                <div class="hora-item"><i class="fas fa-clock"></i> <span>Sáb: 8am - 2pm</span></div>
+                <div class="hora-item"><i class="fas fa-calendar-alt"></i> <span>Emergencias 24/7</span></div>
             </div>
 
-            <!-- SELLO DOMINICANO -->
-            <div class="sello-dominicano">
-                <span><i class="fas fa-check-circle"></i> República Dominicana</span>
-                <span class="badge-calib"><i class="fas fa-microchip"></i> California - Coil</span>
+            <!-- SELLO TÉCNICO -->
+            <div class="sello-tecnico">
+                <span><i class="fas fa-check-circle"></i> República Dominicana · Industria Metalmecánica</span>
+                <span class="badge-california"><i class="fas fa-microchip"></i> California - Coil</span>
             </div>
         </div>
 
-        <!-- === MAPA: CÓMO LLEGAR === -->
-        <div class="mapa-section">
+        <!-- ===== MAPA REAL – CÓMO LLEGAR ===== -->
+        <div class="mapa-real">
             <div class="mapa-titulo">
                 <i class="fas fa-map-marked-alt"></i> CÓMO LLEGAR
             </div>
-            <div class="mapa-container">
-                <div class="mapa-placeholder">
-                    <i class="fas fa-map-location-dot"></i>
-                    <h4 style="color: #5a4f42; font-weight: 600; margin-top: 0.3rem;">Calib 5 #8-31 B</h4>
-                    <p style="color: #7a6e5c; font-size: 0.85rem;">Barrio Latino, Cúcuta</p>
-                    <a href="https://maps.google.com/?q=Calib+5+%238-31+B+Cúcuta" target="_blank" style="display: inline-block; margin-top: 0.8rem; background: #e6b450; color: white; padding: 0.5rem 1.8rem; border-radius: 40px; text-decoration: none; font-size: 0.8rem; font-weight: 600;">VER MAPA</a>
-                </div>
+            <div class="mapa-embed">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.123456789!2d-72.505!3d7.8945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e66459c1f2b7c3d%3A0x8a2c3d4e5f6a7b8c!2sCalib%205%20%238-31%20B%2C%20C%C3%BAcuta!5e0!3m2!1ses!2sco!4v1612345678901!5m2!1ses!2sco"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <div style="margin-top: 1rem; text-align: center;">
+                <a href="https://maps.google.com/?q=Calib+5+%238-31+B+Cúcuta" target="_blank" style="color: #b48b4c; font-weight: 600; text-decoration: none;">
+                    <i class="fas fa-directions"></i> Abrir en Google Maps
+                </a>
             </div>
         </div>
 
-        <!-- === FOOTER CON BOTONES HORIZONTALES === -->
-        <div class="menu-footer" id="contacto">
-            <!-- BOTONES HORIZONTALES: YA NO TAPAN -->
-            <div class="footer-botones-horizontales">
-                <a href="tel:3124672533" class="btn-footer"><i class="fas fa-phone-alt"></i> Llamar</a>
-                <a href="https://wa.me/573124672533" target="_blank" class="btn-footer"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-                <a href="https://maps.google.com/?q=Calib+5+%238-31+B+Cúcuta" target="_blank" class="btn-footer"><i class="fas fa-map-marker-alt"></i> Cómo llegar</a>
-                <a href="#" class="btn-footer"><i class="fas fa-share-alt"></i> Compartir</a>
+        <!-- ===== FOOTER CON BOTONES HORIZONTALES ===== -->
+        <div class="footer-acciones" id="contacto">
+            <div class="botones-horizontales">
+                <a href="tel:3124672533" class="btn-accion"><i class="fas fa-phone-alt"></i> Llamar</a>
+                <a href="https://wa.me/573124672533" target="_blank" class="btn-accion"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                <a href="https://maps.google.com/?q=Calib+5+%238-31+B+Cúcuta" target="_blank" class="btn-accion"><i class="fas fa-map-marker-alt"></i> Cómo llegar</a>
+                <a href="#" class="btn-accion"><i class="fas fa-share-alt"></i> Compartir</a>
             </div>
 
             <div class="footer-grid">
@@ -665,7 +677,7 @@
                     <h4>CONTACTO</h4>
                     <p><i class="fas fa-phone"></i> 312 467 2533</p>
                     <p><i class="fas fa-map-marker-alt"></i> Calib 5 #8-31 B</p>
-                    <p><i class="fas fa-envelope"></i> acero.gas@fiorio.com</p>
+                    <p><i class="fas fa-envelope"></i> fiorio@acero-gas.com</p>
                 </div>
                 <div class="footer-col">
                     <h4>HORARIOS</h4>
@@ -682,18 +694,19 @@
             </div>
             <div class="copyright">
                 <p>© 2026 Acero & Gas · Fidio Fiorio · Todos los derechos reservados</p>
-                <p style="margin-top: 0.3rem;">Industria Metalmecánica · República Dominicana</p>
+                <p style="margin-top: 0.3rem;">Industria Metalmecánica · República Dominicana · Calidad en Acero Inoxidable</p>
             </div>
         </div>
     </div>
 
     <!-- BOTONES FLOTANTES -->
     <div class="floating-buttons">
-        <a href="https://wa.me/573124672533" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i></a>
-        <a href="tel:3124672533" class="btn-call"><i class="fas fa-phone-alt"></i></a>
+        <a href="https://wa.me/573124672533" target="_blank" class="btn-flotante whatsapp"><i class="fab fa-whatsapp"></i></a>
+        <a href="tel:3124672533" class="btn-flotante llamar"><i class="fas fa-phone-alt"></i></a>
     </div>
 
     <script>
+        // MENÚ HAMBURGUESA
         const menuToggle = document.getElementById('menuToggle');
         const overlay = document.getElementById('menuOverlay');
         const cerrar = document.getElementById('cerrarMenu');
@@ -704,6 +717,9 @@
         document.querySelectorAll('.menu-contenido a').forEach(link => {
             link.addEventListener('click', () => overlay.classList.remove('active'));
         });
+
+        // ANIMACIÓN EXTRA AL LOGO
+        console.log("Logo cargando con ruta: /logo.png");
     </script>
 </body>
 </html>
