@@ -27,7 +27,7 @@
 
         /* === TARJETA PRINCIPAL === */
         .digital-card {
-            max-width: 900px;
+            max-width: 950px;
             width: 100%;
             background: #0e121c;
             border: 1px solid rgba(255, 215, 0, 0.25);
@@ -38,7 +38,7 @@
             margin-bottom: 2rem;
         }
 
-        /* === HEADER CON MENÚ HAMBURGUESA === */
+        /* === HEADER === */
         .header-premium {
             background: #080c14;
             padding: 1.2rem 2rem;
@@ -46,7 +46,6 @@
             justify-content: space-between;
             align-items: center;
             border-bottom: 2px solid #ffc107;
-            position: relative;
         }
 
         .logo-titulo {
@@ -84,7 +83,7 @@
             padding-left: 0.8rem;
         }
 
-        /* === MENÚ HAMBURGUESA === */
+        /* === MENÚ HAMBURGUESA - CORREGIDO === */
         .menu-toggle {
             font-size: 2rem;
             cursor: pointer;
@@ -122,8 +121,11 @@
 
         .menu-contenido {
             width: 90%;
-            max-width: 400px;
+            max-width: 450px;
             text-align: center;
+            position: relative;
+            top: 0;
+            transform: none;
         }
 
         .menu-contenido ul {
@@ -131,7 +133,7 @@
         }
 
         .menu-contenido li {
-            margin: 1.8rem 0;
+            margin: 1.5rem 0;
         }
 
         .menu-contenido a {
@@ -144,6 +146,7 @@
             transition: 0.2s;
             border-bottom: 3px solid transparent;
             padding-bottom: 8px;
+            display: inline-block;
         }
 
         .menu-contenido a:hover {
@@ -160,9 +163,9 @@
             cursor: pointer;
         }
 
-        /* === CONTENIDO PRINCIPAL === */
+        /* === CONTENIDO PRINCIPAL - ESPACIADO === */
         .main-content {
-            padding: 1.8rem 2rem 1.5rem;
+            padding: 2rem 2rem 1.8rem;
         }
 
         .lema-acero {
@@ -172,8 +175,8 @@
             letter-spacing: 3px;
             word-spacing: 6px;
             border-bottom: 1px dashed #3a4a5a;
-            padding-bottom: 0.9rem;
-            margin-bottom: 1.2rem;
+            padding-bottom: 1rem;
+            margin-bottom: 1.8rem;
             font-weight: 500;
         }
 
@@ -182,18 +185,18 @@
             margin-right: 8px;
         }
 
-        /* MISIÓN + VISIÓN + VALORES */
+        /* MISIÓN + VISIÓN */
         .mision-vision-unico {
             background: #0e141fb3;
             border-left: 6px solid #ffd966;
             border-radius: 0 18px 18px 0;
-            padding: 1.2rem 1.5rem;
-            margin-bottom: 2rem;
+            padding: 1.3rem 1.8rem;
+            margin-bottom: 2.2rem;
             display: flex;
             flex-wrap: wrap;
             align-items: center;
             justify-content: flex-start;
-            gap: 0.8rem 1.2rem;
+            gap: 1rem 1.5rem;
             backdrop-filter: blur(4px);
             box-shadow: 0 4px 12px #00000030, inset 0 0 0 1px #ffd96633;
         }
@@ -201,7 +204,7 @@
         .miv-item {
             display: flex;
             align-items: center;
-            gap: 0.4rem;
+            gap: 0.5rem;
             color: #e0e7ef;
             font-weight: 500;
         }
@@ -211,7 +214,7 @@
             color: #0a0e14;
             font-weight: 800;
             font-size: 0.75rem;
-            padding: 0.25rem 0.8rem;
+            padding: 0.25rem 0.9rem;
             border-radius: 30px;
             letter-spacing: 1.2px;
             text-transform: uppercase;
@@ -234,76 +237,115 @@
             text-shadow: 0 0 6px #ffbb00;
         }
 
-        /* SECCIÓN VALORES */
+        /* VALORES */
         .valores-section {
             background: #0a0f17;
             border-radius: 20px;
-            padding: 1.5rem;
-            margin-bottom: 1.8rem;
+            padding: 1.8rem;
+            margin-bottom: 2.2rem;
             border: 1px solid #ffd96633;
         }
 
         .valores-title {
             color: #ffd966;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 3px;
-            margin-bottom: 1rem;
+            margin-bottom: 1.3rem;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
         }
 
         .valores-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
+            gap: 1.2rem;
         }
 
         .valor-item {
             background: #1a2531;
-            padding: 0.8rem 1.2rem;
+            padding: 0.9rem 1.3rem;
             border-radius: 40px;
             color: #e0eaf1;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             border: 1px solid #3a4a5a;
+            font-weight: 500;
         }
 
         .valor-item i {
             color: #ffc107;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+        }
+
+        /* SERVICIO FIORIO - TÍTULO MÁS GRANDE */
+        .servicio-fiorio-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.2rem;
+            margin-top: 0.5rem;
+        }
+
+        .servicio-fiorio-titulo {
+            color: #ffd966;
+            font-weight: 800;
+            letter-spacing: 2px;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .servicio-fiorio-titulo i {
+            font-size: 1.6rem;
+        }
+
+        .servicio-fiorio-telefono {
+            color: #a0b9ce;
+            background: #1a2531;
+            padding: 0.4rem 1.3rem;
+            border-radius: 40px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border: 1px solid #5f7a8f;
+        }
+
+        .servicio-fiorio-telefono i {
+            margin-right: 6px;
+            color: #ffc107;
         }
 
         /* SERVICIOS */
         .servicios-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
-            gap: 0.9rem;
-            margin: 1.8rem 0 0.8rem;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0 1.2rem;
         }
 
         .servicio-item {
             background: #111b24;
             border: 1px solid #3e5060;
             border-radius: 40px;
-            padding: 0.6rem 1rem 0.6rem 1.3rem;
+            padding: 0.7rem 1rem 0.7rem 1.3rem;
             display: flex;
             align-items: center;
-            gap: 0.6rem;
+            gap: 0.7rem;
             color: #e6eef5;
             font-weight: 500;
-            font-size: 0.95rem;
+            font-size: 0.98rem;
             transition: all 0.15s;
             box-shadow: 0 3px 0 #0a0e14;
         }
 
         .servicio-item i {
             color: #ffc107;
-            font-size: 1rem;
-            width: 1.4rem;
+            font-size: 1.1rem;
+            width: 1.5rem;
             text-align: center;
         }
 
@@ -314,12 +356,12 @@
             box-shadow: 0 5px 0 #0a0e14, 0 0 12px #ffb34755;
         }
 
-        /* HORARIOS */
+        /* === HORARIOS - BIEN DISTRIBUIDO === */
         .horarios {
             background: #0e141f;
             border-radius: 30px;
-            padding: 1rem 1.5rem;
-            margin: 1.5rem 0;
+            padding: 1.3rem 1.8rem;
+            margin: 2rem 0 1.5rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -330,17 +372,20 @@
         .horario-item {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             color: #ffd966;
         }
 
         .horario-item i {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
+            width: 24px;
+            text-align: center;
         }
 
         .horario-item span {
             color: #e0eaf1;
-            font-weight: 500;
+            font-weight: 600;
+            font-size: 0.95rem;
         }
 
         /* SELLO DOMINICANO */
@@ -348,42 +393,44 @@
             display: flex;
             align-items: center;
             justify-content: flex-end;
-            margin: 0.8rem 0 0.2rem;
-            font-size: 0.85rem;
+            margin: 1.2rem 0 0.5rem;
+            font-size: 0.9rem;
             color: #b4c8d9;
-            gap: 1rem;
+            gap: 1.2rem;
             flex-wrap: wrap;
         }
 
         .badge-calib {
             background: #19232e;
-            padding: 0.25rem 1rem;
+            padding: 0.35rem 1.1rem;
             border-radius: 30px;
             border: 1px solid #f9a825;
             font-weight: 600;
             color: #ffe082;
         }
 
-        /* === FOOTER COMPLETO === */
+        /* === FOOTER COMPLETO - REDES BIEN SEPARADAS === */
         .menu-footer {
             background: #080c11;
             border-top: 1px solid #2a3847;
-            padding: 1.5rem 2rem;
+            padding: 2rem 2rem 1.5rem;
         }
 
         .footer-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
+            gap: 2rem;
+            margin-bottom: 2rem;
         }
 
         .footer-col h4 {
             color: #ffd966;
-            font-size: 0.9rem;
+            font-size: 1rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
+            border-bottom: 1px solid #ffd96633;
+            padding-bottom: 0.5rem;
         }
 
         .footer-col p, .footer-col a {
@@ -391,26 +438,28 @@
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 10px;
-            margin-bottom: 0.7rem;
-            font-size: 0.9rem;
+            gap: 12px;
+            margin-bottom: 0.9rem;
+            font-size: 0.95rem;
         }
 
         .footer-col a:hover {
             color: white;
+            transform: translateX(3px);
         }
 
         .footer-col i {
             color: #ffc107;
-            width: 20px;
+            width: 22px;
+            font-size: 1.1rem;
         }
 
         .copyright {
             text-align: center;
-            padding-top: 1.5rem;
+            padding-top: 1.8rem;
             border-top: 1px solid #2a3847;
             color: #8a9aa8;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
         }
 
         /* === BOTONES FLOTANTES === */
@@ -451,11 +500,12 @@
             transform: scale(1.15);
         }
 
-        @media (max-width: 600px) {
-            .header-premium { flex-direction: column; align-items: start; gap: 0.5rem; }
+        @media (max-width: 700px) {
+            .header-premium { flex-direction: column; align-items: start; gap: 0.8rem; }
             .mision-vision-unico { flex-direction: column; align-items: flex-start; }
             .separador-miv { display: none; }
-            .horarios { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
+            .horarios { flex-direction: column; align-items: flex-start; gap: 1rem; }
+            .servicio-fiorio-header { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
         }
     </style>
 </head>
@@ -476,7 +526,7 @@
             </div>
         </div>
 
-        <!-- OVERLAY MENÚ -->
+        <!-- OVERLAY MENÚ - CORREGIDO CENTRADO VERTICAL -->
         <div class="overlay" id="menuOverlay">
             <div class="cerrar-menu" id="cerrarMenu">
                 <i class="fas fa-times"></i>
@@ -493,7 +543,7 @@
             </div>
         </div>
 
-        <!-- CONTENIDO -->
+        <!-- CONTENIDO PRINCIPAL -->
         <div class="main-content" id="inicio">
             <div class="lema-acero">
                 <i class="fas fa-crown"></i> FABRICACIÓN · SOLDADURA · COCINA INDUSTRIAL
@@ -530,12 +580,12 @@
                 </div>
             </div>
 
-            <!-- SERVICIO FIORIO -->
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-                <span style="color: #ffd966; font-weight: 700; letter-spacing: 2px; font-size: 1.1rem;">
+            <!-- SERVICIO FIORIO - TÍTULO MÁS GRANDE -->
+            <div class="servicio-fiorio-header">
+                <span class="servicio-fiorio-titulo">
                     <i class="fas fa-tools"></i> SERVICIO FIORIO
                 </span>
-                <span style="color: #a0b9ce; background: #1a2531; padding: 0.2rem 1rem; border-radius: 30px; font-size: 0.8rem; border:1px solid #5f7a8f;">
+                <span class="servicio-fiorio-telefono">
                     <i class="fas fa-map-pin"></i> 312 467 2533
                 </span>
             </div>
@@ -552,15 +602,15 @@
                 <div class="servicio-item"><i class="fas fa-fire"></i> Quemadores / Gas</div>
             </div>
 
-            <!-- HORARIOS -->
+            <!-- HORARIOS - BIEN DISTRIBUIDO -->
             <div class="horarios">
                 <div class="horario-item">
                     <i class="fas fa-clock"></i>
-                    <span>Lun-Vie: 7am - 6pm</span>
+                    <span>Lun-Vie: 7:00 AM - 6:00 PM</span>
                 </div>
                 <div class="horario-item">
                     <i class="fas fa-clock"></i>
-                    <span>Sáb: 8am - 2pm</span>
+                    <span>Sáb: 8:00 AM - 2:00 PM</span>
                 </div>
                 <div class="horario-item">
                     <i class="fas fa-calendar-alt"></i>
@@ -575,7 +625,7 @@
             </div>
         </div>
 
-        <!-- FOOTER COMPLETO -->
+        <!-- FOOTER COMPLETO - REDES BIEN SEPARADAS -->
         <div class="menu-footer" id="contacto">
             <div class="footer-grid">
                 <div class="footer-col">
@@ -587,9 +637,10 @@
                 <div class="footer-col">
                     <h4>HORARIOS</h4>
                     <p><i class="fas fa-calendar"></i> Lunes a Viernes</p>
-                    <p style="margin-left: 25px;">7:00 AM - 6:00 PM</p>
+                    <p style="margin-left: 34px;">7:00 AM - 6:00 PM</p>
                     <p><i class="fas fa-calendar"></i> Sábados</p>
-                    <p style="margin-left: 25px;">8:00 AM - 2:00 PM</p>
+                    <p style="margin-left: 34px;">8:00 AM - 2:00 PM</p>
+                    <p><i class="fas fa-clock"></i> Domingos: Cerrado</p>
                 </div>
                 <div class="footer-col">
                     <h4>SÍGUENOS</h4>
@@ -600,7 +651,7 @@
             </div>
             <div class="copyright">
                 <p>© 2026 Acero & Gas · Fidio Fiorio · Todos los derechos reservados</p>
-                <p style="margin-top: 0.5rem; font-size: 0.75rem;">Industria Metalmecánica · República Dominicana</p>
+                <p style="margin-top: 0.6rem; font-size: 0.8rem;">Industria Metalmecánica · República Dominicana · Calidad en Acero Inoxidable</p>
             </div>
         </div>
     </div>
