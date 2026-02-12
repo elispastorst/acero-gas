@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acero & Gas || Tarjeta Digital</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(145deg, #0a0f1e 0%, #151e2c 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 1.5rem;
+        }
+
+        .digital-card {
+            max-width: 800px;
+            width: 100%;
+            background: #0e121c;
+            border: 1px solid rgba(255, 215, 0, 0.25);
+            border-radius: 2.5rem 2.5rem 2rem 2rem;
+            box-shadow: 0 20px 35px -8px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,215,0,0.2), 0 0 15px rgba(255,200,0,0.1);
+            backdrop-filter: blur(2px);
+            overflow: hidden;
+            transition: transform 0.2s ease;
+        }
+
+        .digital-card:hover {
+            border-color: rgba(255, 200, 0, 0.5);
+            box-shadow: 0 25px 40px -10px #000, 0 0 0 1px #ffc10755, 0 0 25px #ffb34733;
+        }
+
+        .header-premium {
+            background: #080c14;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #ffc107;
+            border-image: linear-gradient(45deg, #ffd700, #f9a825) 1;
+            position: relative;
+        }
+
+        .logo-titulo {
+            display: flex;
+            align-items: baseline;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+        }
+
+        .titulo-acero {
+            font-size: 1.9rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(to right, #f9e79f, #ffd966, #f1c40f);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 8px #ffb70055, 0 2px 3px black;
+        }
+
+        .ampersand {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #ffd966;
+            text-shadow: 0 0 6px #ffaa00;
+            margin: 0 2px;
+        }
+
+        .subtitulo-gas {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #b0c4de;
+            letter-spacing: 2px;
+            border-left: 2px solid #ffc107;
+            padding-left: 0.8rem;
+        }
+
+        .codigo-sello {
+            background: #1f2a3a;
+            padding: 0.45rem 1rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #ffd966;
+            border: 1px solid #f0b323;
+            box-shadow: inset 0 0 5px #0a0e14, 0 2px 0 #0a0c10;
+            letter-spacing: 1px;
+        }
+
+        .codigo-sello i {
+            margin-right: 6px;
+            color: #ffb82e;
+        }
+
+        .main-content {
+            padding: 1.8rem 2rem 1.5rem;
+        }
+
+        .lema-acero {
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            color: #aab8c5;
+            letter-spacing: 3px;
+            word-spacing: 6px;
+            border-bottom: 1px dashed #3a4a5a;
+            padding-bottom: 0.9rem;
+            margin-bottom: 1.2rem;
+            font-weight: 500;
+        }
+
+        .lema-acero i {
+            color: #ffc107;
+            margin-right: 8px;
+        }
+
+        /* MISIÓN + VISIÓN EN UNA SOLA LÍNEA */
+        .mision-vision-unico {
+            background: #0e141fb3;
+            border-left: 6px solid #ffd966;
+            border-radius: 0 18px 18px 0;
+            padding: 1.2rem 1.5rem;
+            margin-bottom: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 0.8rem 1.2rem;
+            backdrop-filter: blur(4px);
+            box-shadow: 0 4px 12px #00000030, inset 0 0 0 1px #ffd96633;
+        }
+
+        .miv-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: #e0e7ef;
+            font-weight: 500;
+        }
+
+        .miv-badge {
+            background: #ffc107;
+            color: #0a0e14;
+            font-weight: 800;
+            font-size: 0.75rem;
+            padding: 0.25rem 0.8rem;
+            border-radius: 30px;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            border: 1px solid #ffde6b;
+            box-shadow: 0 2px 0 #8b6b1a;
+        }
+
+        .miv-texto {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #f0f4fa;
+            text-shadow: 0 1px 2px black;
+        }
+
+        .separador-miv {
+            color: #ffc107cc;
+            font-weight: 300;
+            font-size: 1.5rem;
+            line-height: 1;
+            text-shadow: 0 0 6px #ffbb00;
+        }
+
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+            gap: 0.9rem;
+            margin: 1.8rem 0 0.8rem;
+        }
+
+        .servicio-item {
+            background: #111b24;
+            border: 1px solid #3e5060;
+            border-radius: 40px;
+            padding: 0.6rem 1rem 0.6rem 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            color: #e6eef5;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.15s;
+            box-shadow: 0 3px 0 #0a0e14;
+        }
+
+        .servicio-item i {
+            color: #ffc107;
+            font-size: 1rem;
+            width: 1.4rem;
+            text-align: center;
+            filter: drop-shadow(0 0 5px #fd9);
+        }
+
+        .servicio-item:hover {
+            background: #1f2e3c;
+            border-color: #ffd966;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 0 #0a0e14, 0 0 12px #ffb34755;
+        }
+
+        .sello-dominicano {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            margin: 0.8rem 0 0.2rem;
+            font-size: 0.85rem;
+            color: #b4c8d9;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .sello-dominicano span i {
+            color: #ffc107;
+            margin-right: 4px;
+        }
+
+        .badge-calib {
+            background: #19232e;
+            padding: 0.25rem 1rem;
+            border-radius: 30px;
+            border: 1px solid #f9a825;
+            font-weight: 600;
+            color: #ffe082;
+        }
+
+        .menu-footer {
+            background: #080c11;
+            border-top: 1px solid #2a3847;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.2rem 2rem;
+            color: #9faebd;
+            font-size: 0.9rem;
+        }
+
+        .footer-contacto {
+            display: flex;
+            gap: 1.8rem;
+            align-items: center;
+        }
+
+        .footer-contacto a {
+            color: #e0eaf1;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-weight: 500;
+            transition: 0.1s;
+            border-bottom: 1px solid transparent;
+            padding-bottom: 3px;
+        }
+
+        .footer-contacto a i {
+            color: #ffc107;
+            font-size: 1.2rem;
+            width: 1.6rem;
+        }
+
+        .footer-contacto a:hover {
+            color: white;
+            border-bottom-color: #ffc107;
+        }
+
+        .footer-serial {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .numero-serie {
+            font-family: monospace;
+            background: #1a232e;
+            padding: 0.35rem 1rem;
+            border-radius: 40px;
+            border: 1px solid #f1c40f80;
+            color: #ffdb7c;
+            font-weight: 600;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+        }
+
+        .credito-firma {
+            font-size: 0.78rem;
+            color: #78909c;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        @media (max-width: 600px) {
+            .header-premium { flex-direction: column; align-items: start; gap: 0.5rem; }
+            .mision-vision-unico { flex-direction: column; align-items: flex-start; }
+            .separador-miv { display: none; }
+            .footer-contacto { flex-wrap: wrap; gap: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="digital-card">
+
+        <!-- ENCABEZADO -->
+        <div class="header-premium">
+            <div class="logo-titulo">
+                <span class="titulo-acero">ACERO</span>
+                <span class="ampersand">&</span>
+                <span class="subtitulo-gas">GAS</span>
+            </div>
+            <div class="codigo-sello">
+                <i class="fas fa-certificate"></i> Calib 5 #8-31 B
+            </div>
+        </div>
+
+        <!-- CUERPO -->
+        <div class="main-content">
+            <div class="lema-acero">
+                <i class="fas fa-crown"></i> FABRICACIÓN · SOLDADURA · COCINA INDUSTRIAL
+            </div>
+
+            <!-- MISIÓN + VISIÓN + EXCELENCIA (TODO EN UNA SOLA LÍNEA) -->
+            <div class="mision-vision-unico">
+                <div class="miv-item">
+                    <span class="miv-badge">M</span>
+                    <span class="miv-texto">Innovación en acero inoxidable</span>
+                </div>
+                <span class="separador-miv">⏤⎯⏤</span>
+                <div class="miv-item">
+                    <span class="miv-badge">V</span>
+                    <span class="miv-texto">Líderes en Centroamérica</span>
+                </div>
+                <span class="separador-miv">✦</span>
+                <div class="miv-item">
+                    <i class="fas fa-trophy" style="color:#ffc107;"></i>
+                    <span style="font-weight:600; color:#ffdb9f;">Excelencia desde 1985</span>
+                </div>
+            </div>
+
+            <!-- SERVICIO FIORIO + TELÉFONO -->
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+                <span style="color: #ffd966; font-weight: 700; letter-spacing: 2px; font-size: 1.1rem;">
+                    <i class="fas fa-tools"></i> SERVICIO FIORIO
+                </span>
+                <span style="color: #a0b9ce; background: #1a2531; padding: 0.2rem 1rem; border-radius: 30px; font-size: 0.8rem; border:1px solid #5f7a8f;">
+                    <i class="fas fa-map-pin"></i> 3124672533
+                </span>
+            </div>
+
+            <!-- SERVICIOS -->
+            <div class="servicios-grid">
+                <div class="servicio-item"><i class="fas fa-utensils"></i> Marmites</div>
+                <div class="servicio-item"><i class="fas fa-hand-holding-heart"></i> Pasamanos</div>
+                <div class="servicio-item"><i class="fas fa-cube"></i> Tropes para Cocina</div>
+                <div class="servicio-item"><i class="fas fa-blender"></i> Despulpadores de Frutas</div>
+                <div class="servicio-item"><i class="fas fa-apple-alt"></i> Manzanas Peladoras de Papa</div>
+                <div class="servicio-item"><i class="fas fa-utensil-spoon"></i> Montejas en Acero Inox.</div>
+                <div class="servicio-item"><i class="fas fa-drumstick-bite"></i> Enjuagas para Malabados de Pollo</div>
+                <div class="servicio-item"><i class="fas fa-fire"></i> Quemadores / Gas</div>
+            </div>
+
+            <!-- SELLO REPÚBLICA DOMINICANA -->
+            <div class="sello-dominicano">
+                <span><i class="fas fa-check-circle"></i> República Dominicana · Industria Metalmecánica</span>
+                <span class="badge-calib"><i class="fas fa-microchip"></i> California - Coil</span>
+            </div>
+        </div>
+
+        <!-- FOOTER CONTACTO -->
+        <div class="menu-footer">
+            <div class="footer-contacto">
+                <a href="tel:3124672533"><i class="fas fa-phone-alt"></i> 312-467-2533</a>
+                <a href="#"><i class="fas fa-map-marker-alt"></i> Calib 5 #8-31 B</a>
+                <a href="#"><i class="fas fa-envelope"></i> acero.gas@fiorio</a>
+            </div>
+            <div class="footer-serial">
+                <span class="numero-serie"><i class="fas fa-hashtag"></i> Fidio Fiorio</span>
+                <span class="credito-firma"><i class="fas fa-bolt"></i> ACERO&GAS ⚡</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
