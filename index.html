@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>Acero & Gas || Fidio Fiorio • Industria Metalmecánica</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -15,7 +15,7 @@
         }
 
         body {
-            background: linear-gradient(145deg, #0a0f1e 0%, #151e2c 100%);
+            background: linear-gradient(145deg, #f8f5f2 0%, #eae7e2 100%);
             min-height: 100vh;
             padding: 1.5rem;
             display: flex;
@@ -26,52 +26,50 @@
         .digital-card {
             max-width: 1000px;
             width: 100%;
-            background: #0e121c;
-            border: 1px solid rgba(255,215,0,0.25);
-            border-radius: 2.5rem 2.5rem 2rem 2rem;
-            box-shadow: 0 20px 35px -8px #000, 0 0 0 1px rgba(255,215,0,0.2);
+            background: #ffffff;
+            border-radius: 2rem;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(0, 0, 0, 0.02);
             overflow: hidden;
             margin-bottom: 2rem;
         }
 
-        /* === HEADER FIJO === */
+        /* === HEADER SUAVE === */
         .header-premium {
-            background: #080c14;
+            background: #ffffff;
             padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 2px solid #ffc107;
+            border-bottom: 1px solid #f0c45a;
         }
 
         .menu-toggle {
-            font-size: 2rem;
+            font-size: 1.6rem;
             cursor: pointer;
-            color: #ffd966;
-            transition: 0.3s;
+            color: #b48b3a;
+            transition: 0.2s;
         }
 
         .menu-toggle:hover {
-            transform: scale(1.1);
-            color: white;
+            color: #7a5c2e;
         }
 
-        /* === MENÚ HAMBURGUESA CORREGIDO: CENTRADO, LETRAS GIGANTES, VISIBLE === */
+        /* === MENÚ FEMENINO, DELICADO, CENTRADO === */
         .overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(8, 12, 20, 0.98);
-            backdrop-filter: blur(8px);
+            background: rgba(255, 250, 240, 0.97);
+            backdrop-filter: blur(4px);
             z-index: 2000;
             display: flex;
             justify-content: center;
             align-items: center;
             opacity: 0;
             visibility: hidden;
-            transition: 0.3s;
+            transition: 0.25s;
         }
 
         .overlay.active {
@@ -81,9 +79,9 @@
 
         .menu-contenido {
             width: 100%;
-            max-width: 600px;
+            max-width: 500px;
             text-align: center;
-            padding: 0 1.5rem;
+            padding: 0 1.2rem;
         }
 
         .menu-contenido ul {
@@ -91,360 +89,426 @@
         }
 
         .menu-contenido li {
-            margin: 2rem 0;
+            margin: 1.2rem 0;
         }
 
         .menu-contenido a {
-            color: white;
+            color: #3e3a36;
             text-decoration: none;
-            font-size: 2.2rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            transition: 0.2s;
-            border-bottom: 4px solid transparent;
-            padding-bottom: 10px;
+            font-size: 1.3rem;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            border-bottom: 1.5px solid transparent;
+            padding-bottom: 5px;
             display: inline-block;
+            transition: 0.2s;
         }
 
         .menu-contenido a:hover {
-            border-bottom-color: #ffc107;
-            color: #ffd966;
-            transform: scale(1.05);
+            border-bottom-color: #e6b450;
+            color: #9e7b3c;
         }
 
         .cerrar-menu {
             position: absolute;
-            top: 30px;
-            right: 40px;
-            font-size: 3.5rem;
-            color: #ffd966;
+            top: 20px;
+            right: 30px;
+            font-size: 2.2rem;
+            color: #b48b3a;
             cursor: pointer;
         }
 
-        /* === HERO DE BIENVENIDA ÉPICO === */
+        /* === HERO ELEGANTE === */
         .hero-bienvenida {
-            background: linear-gradient(145deg, #0a101a, #04080f);
-            padding: 2.5rem 2rem;
+            background: #fefcf7;
+            padding: 2rem 2rem 1.8rem;
             text-align: center;
-            border-bottom: 1px solid #ffc10733;
-            position: relative;
+            border-bottom: 1px solid #f0e1c6;
         }
 
         .logo-container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            gap: 0.8rem;
+            gap: 0.6rem;
         }
 
         .logo-principal {
-            max-width: 280px;
+            max-width: 240px;
             width: 100%;
             height: auto;
-            margin-bottom: 0.5rem;
-            filter: drop-shadow(0 0 15px rgba(255, 200, 0, 0.3));
+            filter: drop-shadow(0 4px 8px rgba(180, 140, 70, 0.08));
         }
 
         .bienvenida-titulo {
-            font-size: 2.2rem;
-            font-weight: 900;
-            background: linear-gradient(to right, #f9e79f, #ffd966, #f1c40f);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-shadow: 0 0 15px #ffb70080, 0 2px 5px black;
-            letter-spacing: 2px;
-            margin-top: 0.5rem;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #4a3b22;
+            letter-spacing: 1px;
+            margin-top: 0.3rem;
         }
 
         .bienvenida-sub {
-            font-size: 1.1rem;
-            color: #b0c4de;
-            letter-spacing: 4px;
+            font-size: 0.85rem;
+            color: #8f7a5b;
+            letter-spacing: 3px;
             text-transform: uppercase;
-            border-top: 1px solid #ffc10766;
-            border-bottom: 1px solid #ffc10766;
-            padding: 0.8rem 0;
+            border-top: 1px solid #eedbaa;
+            border-bottom: 1px solid #eedbaa;
+            padding: 0.6rem 1rem;
             display: inline-block;
-            margin-top: 0.5rem;
         }
 
-        /* === RESTO DEL CONTENIDO === */
+        /* === CONTENIDO PRINCIPAL === */
         .main-content {
-            padding: 2rem 2rem;
+            padding: 2rem 2rem 1.5rem;
+            background: #ffffff;
         }
 
         .lema-acero {
-            font-size: 0.95rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
-            color: #aab8c5;
-            letter-spacing: 3px;
-            border-bottom: 1px dashed #3a4a5a;
-            padding-bottom: 1rem;
+            color: #9e8b72;
+            letter-spacing: 2.5px;
+            border-bottom: 1px dashed #e2d5c0;
+            padding-bottom: 0.9rem;
             margin-bottom: 1.8rem;
+            font-weight: 400;
         }
 
         .lema-acero i {
-            color: #ffc107;
-            margin-right: 8px;
+            color: #e6b450;
+            margin-right: 6px;
         }
 
         .mision-vision-unico {
-            background: #0e141fb3;
-            border-left: 6px solid #ffd966;
-            border-radius: 0 18px 18px 0;
-            padding: 1.3rem 1.8rem;
-            margin-bottom: 2.2rem;
+            background: #fdfaf5;
+            border-left: 5px solid #e6b450;
+            border-radius: 0 16px 16px 0;
+            padding: 1.2rem 1.5rem;
+            margin-bottom: 2rem;
             display: flex;
             flex-wrap: wrap;
             align-items: center;
-            gap: 1rem 1.5rem;
+            gap: 0.8rem 1.2rem;
         }
 
         .miv-badge {
-            background: #ffc107;
-            color: #0a0e14;
-            font-weight: 800;
-            font-size: 0.75rem;
-            padding: 0.25rem 0.9rem;
+            background: #e6b450;
+            color: white;
+            font-weight: 600;
+            font-size: 0.7rem;
+            padding: 0.2rem 0.8rem;
             border-radius: 30px;
+            letter-spacing: 1px;
             text-transform: uppercase;
         }
 
         .miv-texto {
-            font-size: 1.05rem;
-            font-weight: 600;
-            color: #f0f4fa;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #4a4137;
         }
 
         .valores-section {
-            background: #0a0f17;
+            background: #fbf9f6;
             border-radius: 20px;
-            padding: 1.8rem;
-            margin-bottom: 2.2rem;
-            border: 1px solid #ffd96633;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border: 1px solid #f0e4d4;
         }
 
         .valores-title {
-            color: #ffd966;
-            font-size: 1.2rem;
-            font-weight: 700;
+            color: #b48b3a;
+            font-size: 1rem;
+            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 1.3rem;
+            letter-spacing: 2.5px;
+            margin-bottom: 1.2rem;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
 
         .valores-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.2rem;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1rem;
         }
 
         .valor-item {
-            background: #1a2531;
-            padding: 0.9rem 1.3rem;
+            background: #ffffff;
+            padding: 0.8rem 1.2rem;
             border-radius: 40px;
-            color: #e0eaf1;
+            color: #5b4e3a;
             display: flex;
             align-items: center;
-            gap: 12px;
-            border: 1px solid #3a4a5a;
+            gap: 10px;
+            border: 1px solid #eadbc5;
             font-weight: 500;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
         }
 
         .valor-item i {
-            color: #ffc107;
-            font-size: 1.2rem;
+            color: #e6b450;
+            font-size: 1rem;
         }
 
         .servicio-fiorio-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 1.2rem;
-            margin-top: 0.5rem;
+            margin-bottom: 1rem;
         }
 
         .servicio-fiorio-titulo {
-            color: #ffd966;
-            font-weight: 800;
-            font-size: 1.4rem;
+            color: #b48b3a;
+            font-weight: 700;
+            font-size: 1.1rem;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
+            letter-spacing: 1px;
         }
 
         .servicio-fiorio-telefono {
-            color: #a0b9ce;
-            background: #1a2531;
-            padding: 0.4rem 1.3rem;
+            color: #6f6b63;
+            background: #f5efe8;
+            padding: 0.3rem 1rem;
             border-radius: 40px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            border: 1px solid #5f7a8f;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid #e2d2be;
         }
 
         .servicios-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 1rem;
-            margin: 1.5rem 0 1.2rem;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 0.8rem;
+            margin: 1.2rem 0 1rem;
         }
 
         .servicio-item {
-            background: #111b24;
-            border: 1px solid #3e5060;
+            background: #f9f6f2;
+            border: 1px solid #e7ddcf;
             border-radius: 40px;
-            padding: 0.7rem 1rem 0.7rem 1.3rem;
+            padding: 0.6rem 0.8rem 0.6rem 1.2rem;
             display: flex;
             align-items: center;
-            gap: 0.7rem;
-            color: #e6eef5;
+            gap: 0.6rem;
+            color: #554b3f;
             font-weight: 500;
-            transition: 0.15s;
-            box-shadow: 0 3px 0 #0a0e14;
+            font-size: 0.85rem;
+            transition: 0.1s;
         }
 
         .servicio-item i {
-            color: #ffc107;
-            font-size: 1.1rem;
-            width: 1.5rem;
-        }
-
-        .servicio-item:hover {
-            background: #1f2e3c;
-            border-color: #ffd966;
-            transform: translateY(-2px);
+            color: #e6b450;
+            font-size: 0.95rem;
+            width: 1.3rem;
         }
 
         .horarios {
-            background: #0e141f;
-            border-radius: 30px;
-            padding: 1.3rem 1.8rem;
-            margin: 2rem 0 1.5rem;
+            background: #fdfaf5;
+            border-radius: 20px;
+            padding: 1.2rem 1.5rem;
+            margin: 1.8rem 0 1.2rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
-            border: 1px solid #ffd96666;
+            border: 1px solid #eedbaa;
         }
 
         .horario-item {
             display: flex;
             align-items: center;
-            gap: 12px;
-            color: #ffd966;
+            gap: 8px;
+            color: #b48b3a;
         }
 
         .horario-item span {
-            color: #e0eaf1;
-            font-weight: 600;
+            color: #5a4f42;
+            font-weight: 500;
+            font-size: 0.85rem;
         }
 
         .sello-dominicano {
             display: flex;
             align-items: center;
             justify-content: flex-end;
-            margin: 1.2rem 0 0.5rem;
-            gap: 1.2rem;
+            margin: 1rem 0 0.2rem;
+            gap: 1rem;
             flex-wrap: wrap;
-            color: #b4c8d9;
+            color: #8e826c;
+            font-size: 0.8rem;
         }
 
         .badge-calib {
-            background: #19232e;
-            padding: 0.35rem 1.1rem;
+            background: #f5efe8;
+            padding: 0.3rem 1rem;
             border-radius: 30px;
-            border: 1px solid #f9a825;
-            color: #ffe082;
-            font-weight: 600;
+            border: 1px solid #e6b45080;
+            color: #7a643f;
+            font-weight: 500;
         }
 
+        /* === MAPA === */
+        .mapa-section {
+            padding: 1rem 2rem 2rem;
+            background: #ffffff;
+            border-top: 1px solid #f0e4d4;
+        }
+
+        .mapa-titulo {
+            color: #b48b3a;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .mapa-container {
+            width: 100%;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.02);
+            border: 1px solid #f0e4d4;
+        }
+
+        .mapa-placeholder {
+            background: #f5f2ed;
+            padding: 1.2rem;
+            text-align: center;
+            color: #8a7a62;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .mapa-placeholder i {
+            font-size: 2rem;
+            color: #b48b3a;
+        }
+
+        /* === FOOTER CON BOTONES HORIZONTALES === */
         .menu-footer {
-            background: #080c11;
-            border-top: 1px solid #2a3847;
-            padding: 2rem 2rem 1.5rem;
+            background: #fcfaf7;
+            border-top: 1px solid #e7dacb;
+            padding: 1.5rem 2rem 1.2rem;
+        }
+
+        .footer-botones-horizontales {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1.8rem;
+        }
+
+        .btn-footer {
+            background: #ffffff;
+            border: 1px solid #e6b450;
+            color: #b48b3a;
+            padding: 0.6rem 1.3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.2s;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+
+        .btn-footer i {
+            font-size: 1rem;
+        }
+
+        .btn-footer:hover {
+            background: #e6b450;
+            color: white;
         }
 
         .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
         }
 
         .footer-col h4 {
-            color: #ffd966;
-            font-size: 1rem;
+            color: #b48b3a;
+            font-size: 0.85rem;
+            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 1.2rem;
-            border-bottom: 1px solid #ffd96633;
-            padding-bottom: 0.5rem;
+            letter-spacing: 1.5px;
+            margin-bottom: 0.8rem;
         }
 
         .footer-col p, .footer-col a {
-            color: #b0c4de;
+            color: #6a6157;
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 12px;
-            margin-bottom: 0.9rem;
-        }
-
-        .footer-col a:hover {
-            color: white;
-            transform: translateX(3px);
+            gap: 10px;
+            margin-bottom: 0.6rem;
+            font-size: 0.8rem;
         }
 
         .footer-col i {
-            color: #ffc107;
-            width: 22px;
+            color: #b48b3a;
+            width: 18px;
         }
 
         .copyright {
             text-align: center;
-            padding-top: 1.8rem;
-            border-top: 1px solid #2a3847;
-            color: #8a9aa8;
+            padding-top: 1.2rem;
+            border-top: 1px solid #e7dacb;
+            color: #988e7d;
+            font-size: 0.75rem;
         }
 
         .floating-buttons {
             position: fixed;
-            bottom: 30px;
-            right: 25px;
+            bottom: 25px;
+            right: 20px;
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 12px;
             z-index: 999;
         }
 
         .btn-wa, .btn-call {
-            width: 65px;
-            height: 65px;
+            width: 52px;
+            height: 52px;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 2.2rem;
+            font-size: 1.5rem;
             color: white;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+            box-shadow: 0 6px 14px rgba(0,0,0,0.06);
             text-decoration: none;
         }
 
         .btn-wa { background: #25d366; }
-        .btn-call { background: #0a3144; border: 2px solid #ffc107; }
+        .btn-call { background: #b48b3a; }
 
         @media (max-width: 700px) {
-            .header-premium { flex-direction: column; align-items: start; gap: 0.8rem; }
+            .header-premium { flex-direction: column; align-items: start; gap: 0.5rem; }
             .servicio-fiorio-header { flex-direction: column; align-items: flex-start; }
             .horarios { flex-direction: column; align-items: flex-start; }
-            .menu-contenido a { font-size: 1.8rem; }
+            .footer-botones-horizontales { flex-direction: column; width: 100%; }
+            .btn-footer { width: 100%; justify-content: center; }
         }
     </style>
 </head>
@@ -455,16 +519,16 @@
 
         <!-- HEADER CON MENÚ -->
         <div class="header-premium">
-            <div style="display: flex; align-items: center;">
-                <i class="fas fa-bolt" style="color: #ffc107; font-size: 1.8rem; margin-right: 10px;"></i>
-                <span style="color: white; font-weight: 700;">FIDIO FIORIO</span>
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <i class="fas fa-bolt" style="color: #e6b450; font-size: 1.4rem;"></i>
+                <span style="color: #5a4f42; font-weight: 500; letter-spacing: 1px;">FIDIO FIORIO</span>
             </div>
             <div class="menu-toggle" id="menuToggle">
                 <i class="fas fa-bars"></i>
             </div>
         </div>
 
-        <!-- MENÚ CORREGIDO - LETRAS GIGANTES Y CENTRADO -->
+        <!-- MENÚ DELICADO, FEMENINO -->
         <div class="overlay" id="menuOverlay">
             <div class="cerrar-menu" id="cerrarMenu">
                 <i class="fas fa-times"></i>
@@ -481,20 +545,18 @@
             </div>
         </div>
 
-        <!-- === HERO ÉPICO DE BIENVENIDA CON LOGO === -->
+        <!-- HERO CON LOGO Y BIENVENIDA -->
         <div class="hero-bienvenida">
             <div class="logo-container">
-                <!-- LOGO REAL - RUTA CORRECTA -->
                 <img src="https://raw.githubusercontent.com/Elis-suarez/acero&gas/main/logotipo-acero-gas.png" 
                      alt="Acero & Gas" 
                      class="logo-principal"
                      onerror="this.src='https://raw.githubusercontent.com/Elis-suarez/acero&gas/main/logo.png'; this.onerror=null;">
-                
                 <h1 class="bienvenida-titulo">
-                    ¡BIENVENIDO!
+                    Bienvenida
                 </h1>
                 <span class="bienvenida-sub">
-                    <i class="fas fa-certificate"></i> CALIDAD INDUSTRIAL DESDE 1985 <i class="fas fa-certificate"></i>
+                    <i class="fas fa-certificate"></i> CALIDAD INDUSTRIAL · 1985
                 </span>
             </div>
         </div>
@@ -507,20 +569,14 @@
 
             <!-- MISIÓN Y VISIÓN -->
             <div class="mision-vision-unico">
-                <div class="miv-item">
-                    <span class="miv-badge">M</span>
-                    <span class="miv-texto">Innovación en acero inoxidable</span>
-                </div>
-                <span style="color:#ffc107; font-size:1.5rem;">⏤⎯⏤</span>
-                <div class="miv-item">
-                    <span class="miv-badge">V</span>
-                    <span class="miv-texto">Líderes en Centroamérica</span>
-                </div>
-                <span style="color:#ffc107; font-size:1.5rem;">✦</span>
-                <div class="miv-item">
-                    <i class="fas fa-trophy" style="color:#ffc107;"></i>
-                    <span style="font-weight:600; color:#ffdb9f;">Excelencia desde 1985</span>
-                </div>
+                <span class="miv-badge">M</span>
+                <span class="miv-texto">Innovación en acero inoxidable</span>
+                <span style="color:#e6b450;">⎯</span>
+                <span class="miv-badge">V</span>
+                <span class="miv-texto">Líderes en Centroamérica</span>
+                <span style="color:#e6b450;">✦</span>
+                <i class="fas fa-trophy" style="color:#e6b450;"></i>
+                <span style="font-weight:500; color:#7a643f;">Excelencia desde 1985</span>
             </div>
 
             <!-- VALORES -->
@@ -551,38 +607,52 @@
                 <div class="servicio-item"><i class="fas fa-utensils"></i> Marmites</div>
                 <div class="servicio-item"><i class="fas fa-hand-holding-heart"></i> Pasamanos</div>
                 <div class="servicio-item"><i class="fas fa-cube"></i> Tropes para Cocina</div>
-                <div class="servicio-item"><i class="fas fa-blender"></i> Despulpadores de Frutas</div>
+                <div class="servicio-item"><i class="fas fa-blender"></i> Despulpadores</div>
                 <div class="servicio-item"><i class="fas fa-apple-alt"></i> Peladoras de Papa</div>
-                <div class="servicio-item"><i class="fas fa-utensil-spoon"></i> Montejas en Acero Inox.</div>
+                <div class="servicio-item"><i class="fas fa-utensil-spoon"></i> Montejas Inox.</div>
                 <div class="servicio-item"><i class="fas fa-drumstick-bite"></i> Enjuagas para Pollo</div>
                 <div class="servicio-item"><i class="fas fa-fire"></i> Quemadores / Gas</div>
             </div>
 
             <!-- HORARIOS -->
             <div class="horarios">
-                <div class="horario-item">
-                    <i class="fas fa-clock"></i>
-                    <span>Lun-Vie: 7:00 AM - 6:00 PM</span>
-                </div>
-                <div class="horario-item">
-                    <i class="fas fa-clock"></i>
-                    <span>Sáb: 8:00 AM - 2:00 PM</span>
-                </div>
-                <div class="horario-item">
-                    <i class="fas fa-calendar-alt"></i>
-                    <span>Emergencias 24/7</span>
-                </div>
+                <div class="horario-item"><i class="fas fa-clock"></i><span>Lun-Vie 7am-6pm</span></div>
+                <div class="horario-item"><i class="fas fa-clock"></i><span>Sáb 8am-2pm</span></div>
+                <div class="horario-item"><i class="fas fa-calendar-alt"></i><span>Emergencias 24/7</span></div>
             </div>
 
             <!-- SELLO DOMINICANO -->
             <div class="sello-dominicano">
-                <span><i class="fas fa-check-circle"></i> República Dominicana · Industria Metalmecánica</span>
+                <span><i class="fas fa-check-circle"></i> República Dominicana</span>
                 <span class="badge-calib"><i class="fas fa-microchip"></i> California - Coil</span>
             </div>
         </div>
 
-        <!-- FOOTER -->
+        <!-- === MAPA: CÓMO LLEGAR === -->
+        <div class="mapa-section">
+            <div class="mapa-titulo">
+                <i class="fas fa-map-marked-alt"></i> CÓMO LLEGAR
+            </div>
+            <div class="mapa-container">
+                <div class="mapa-placeholder">
+                    <i class="fas fa-map-location-dot"></i>
+                    <h4 style="color: #5a4f42; font-weight: 600; margin-top: 0.3rem;">Calib 5 #8-31 B</h4>
+                    <p style="color: #7a6e5c; font-size: 0.85rem;">Barrio Latino, Cúcuta</p>
+                    <a href="https://maps.google.com/?q=Calib+5+%238-31+B+Cúcuta" target="_blank" style="display: inline-block; margin-top: 0.8rem; background: #e6b450; color: white; padding: 0.5rem 1.8rem; border-radius: 40px; text-decoration: none; font-size: 0.8rem; font-weight: 600;">VER MAPA</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- === FOOTER CON BOTONES HORIZONTALES === -->
         <div class="menu-footer" id="contacto">
+            <!-- BOTONES HORIZONTALES: YA NO TAPAN -->
+            <div class="footer-botones-horizontales">
+                <a href="tel:3124672533" class="btn-footer"><i class="fas fa-phone-alt"></i> Llamar</a>
+                <a href="https://wa.me/573124672533" target="_blank" class="btn-footer"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                <a href="https://maps.google.com/?q=Calib+5+%238-31+B+Cúcuta" target="_blank" class="btn-footer"><i class="fas fa-map-marker-alt"></i> Cómo llegar</a>
+                <a href="#" class="btn-footer"><i class="fas fa-share-alt"></i> Compartir</a>
+            </div>
+
             <div class="footer-grid">
                 <div class="footer-col">
                     <h4>CONTACTO</h4>
@@ -592,32 +662,28 @@
                 </div>
                 <div class="footer-col">
                     <h4>HORARIOS</h4>
-                    <p><i class="fas fa-calendar"></i> Lunes a Viernes: 7am-6pm</p>
-                    <p><i class="fas fa-calendar"></i> Sábados: 8am-2pm</p>
-                    <p><i class="fas fa-clock"></i> Domingos: Cerrado</p>
+                    <p><i class="fas fa-calendar"></i> Lun-Vie: 7am-6pm</p>
+                    <p><i class="fas fa-calendar"></i> Sáb: 8am-2pm</p>
+                    <p><i class="fas fa-clock"></i> Dom: Cerrado</p>
                 </div>
                 <div class="footer-col">
-                    <h4>SÍGUENOS</h4>
+                    <h4>REDES</h4>
                     <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
                     <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
-                    <a href="https://wa.me/573124672533" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                    <a href="#"><i class="fab fa-tiktok"></i> TikTok</a>
                 </div>
             </div>
             <div class="copyright">
                 <p>© 2026 Acero & Gas · Fidio Fiorio · Todos los derechos reservados</p>
-                <p style="margin-top: 0.6rem;">Industria Metalmecánica · República Dominicana</p>
+                <p style="margin-top: 0.3rem;">Industria Metalmecánica · República Dominicana</p>
             </div>
         </div>
     </div>
 
     <!-- BOTONES FLOTANTES -->
     <div class="floating-buttons">
-        <a href="https://wa.me/573124672533" target="_blank" class="btn-wa" title="WhatsApp">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-        <a href="tel:3124672533" class="btn-call" title="Llamar ahora">
-            <i class="fas fa-phone-alt"></i>
-        </a>
+        <a href="https://wa.me/573124672533" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i></a>
+        <a href="tel:3124672533" class="btn-call"><i class="fas fa-phone-alt"></i></a>
     </div>
 
     <script>
