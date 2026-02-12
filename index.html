@@ -4,16 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>Acero & Gas || Fidio Fiorio • Industria Metalmecánica</title>
-    <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Font Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Inter', sans-serif;
         }
 
         body {
@@ -25,71 +23,32 @@
             align-items: center;
         }
 
-        /* === TARJETA PRINCIPAL === */
         .digital-card {
-            max-width: 950px;
+            max-width: 1000px;
             width: 100%;
             background: #0e121c;
-            border: 1px solid rgba(255, 215, 0, 0.25);
+            border: 1px solid rgba(255,215,0,0.25);
             border-radius: 2.5rem 2.5rem 2rem 2rem;
-            box-shadow: 0 20px 35px -8px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,215,0,0.2), 0 0 15px rgba(255,200,0,0.1);
-            backdrop-filter: blur(2px);
+            box-shadow: 0 20px 35px -8px #000, 0 0 0 1px rgba(255,215,0,0.2);
             overflow: hidden;
             margin-bottom: 2rem;
         }
 
-        /* === HEADER === */
+        /* === HEADER FIJO === */
         .header-premium {
             background: #080c14;
-            padding: 1.2rem 2rem;
+            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-bottom: 2px solid #ffc107;
         }
 
-        .logo-titulo {
-            display: flex;
-            align-items: baseline;
-            gap: 0.4rem;
-            flex-wrap: wrap;
-        }
-
-        .titulo-acero {
-            font-size: 1.9rem;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            background: linear-gradient(to right, #f9e79f, #ffd966, #f1c40f);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-shadow: 0 0 8px #ffb70055, 0 2px 3px black;
-        }
-
-        .ampersand {
-            font-size: 2rem;
-            font-weight: 900;
-            color: #ffd966;
-            text-shadow: 0 0 6px #ffaa00;
-            margin: 0 2px;
-        }
-
-        .subtitulo-gas {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #b0c4de;
-            letter-spacing: 2px;
-            border-left: 2px solid #ffc107;
-            padding-left: 0.8rem;
-        }
-
-        /* === MENÚ HAMBURGUESA - CORREGIDO === */
         .menu-toggle {
             font-size: 2rem;
             cursor: pointer;
             color: #ffd966;
             transition: 0.3s;
-            z-index: 1001;
         }
 
         .menu-toggle:hover {
@@ -97,6 +56,7 @@
             color: white;
         }
 
+        /* === MENÚ HAMBURGUESA CORREGIDO: CENTRADO, LETRAS GIGANTES, VISIBLE === */
         .overlay {
             position: fixed;
             top: 0;
@@ -120,12 +80,10 @@
         }
 
         .menu-contenido {
-            width: 90%;
-            max-width: 450px;
+            width: 100%;
+            max-width: 600px;
             text-align: center;
-            position: relative;
-            top: 0;
-            transform: none;
+            padding: 0 1.5rem;
         }
 
         .menu-contenido ul {
@@ -133,39 +91,89 @@
         }
 
         .menu-contenido li {
-            margin: 1.5rem 0;
+            margin: 2rem 0;
         }
 
         .menu-contenido a {
             color: white;
             text-decoration: none;
-            font-size: 1.8rem;
-            font-weight: 800;
+            font-size: 2.2rem;
+            font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 4px;
             transition: 0.2s;
-            border-bottom: 3px solid transparent;
-            padding-bottom: 8px;
+            border-bottom: 4px solid transparent;
+            padding-bottom: 10px;
             display: inline-block;
         }
 
         .menu-contenido a:hover {
             border-bottom-color: #ffc107;
             color: #ffd966;
+            transform: scale(1.05);
         }
 
         .cerrar-menu {
             position: absolute;
-            top: 25px;
-            right: 35px;
-            font-size: 3rem;
+            top: 30px;
+            right: 40px;
+            font-size: 3.5rem;
             color: #ffd966;
             cursor: pointer;
         }
 
-        /* === CONTENIDO PRINCIPAL - ESPACIADO === */
+        /* === HERO DE BIENVENIDA ÉPICO === */
+        .hero-bienvenida {
+            background: linear-gradient(145deg, #0a101a, #04080f);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            border-bottom: 1px solid #ffc10733;
+            position: relative;
+        }
+
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+        }
+
+        .logo-principal {
+            max-width: 280px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 0.5rem;
+            filter: drop-shadow(0 0 15px rgba(255, 200, 0, 0.3));
+        }
+
+        .bienvenida-titulo {
+            font-size: 2.2rem;
+            font-weight: 900;
+            background: linear-gradient(to right, #f9e79f, #ffd966, #f1c40f);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 15px #ffb70080, 0 2px 5px black;
+            letter-spacing: 2px;
+            margin-top: 0.5rem;
+        }
+
+        .bienvenida-sub {
+            font-size: 1.1rem;
+            color: #b0c4de;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            border-top: 1px solid #ffc10766;
+            border-bottom: 1px solid #ffc10766;
+            padding: 0.8rem 0;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+
+        /* === RESTO DEL CONTENIDO === */
         .main-content {
-            padding: 2rem 2rem 1.8rem;
+            padding: 2rem 2rem;
         }
 
         .lema-acero {
@@ -173,11 +181,9 @@
             text-transform: uppercase;
             color: #aab8c5;
             letter-spacing: 3px;
-            word-spacing: 6px;
             border-bottom: 1px dashed #3a4a5a;
             padding-bottom: 1rem;
             margin-bottom: 1.8rem;
-            font-weight: 500;
         }
 
         .lema-acero i {
@@ -185,7 +191,6 @@
             margin-right: 8px;
         }
 
-        /* MISIÓN + VISIÓN */
         .mision-vision-unico {
             background: #0e141fb3;
             border-left: 6px solid #ffd966;
@@ -195,18 +200,7 @@
             display: flex;
             flex-wrap: wrap;
             align-items: center;
-            justify-content: flex-start;
             gap: 1rem 1.5rem;
-            backdrop-filter: blur(4px);
-            box-shadow: 0 4px 12px #00000030, inset 0 0 0 1px #ffd96633;
-        }
-
-        .miv-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: #e0e7ef;
-            font-weight: 500;
         }
 
         .miv-badge {
@@ -216,28 +210,15 @@
             font-size: 0.75rem;
             padding: 0.25rem 0.9rem;
             border-radius: 30px;
-            letter-spacing: 1.2px;
             text-transform: uppercase;
-            border: 1px solid #ffde6b;
-            box-shadow: 0 2px 0 #8b6b1a;
         }
 
         .miv-texto {
             font-size: 1.05rem;
             font-weight: 600;
             color: #f0f4fa;
-            text-shadow: 0 1px 2px black;
         }
 
-        .separador-miv {
-            color: #ffc107cc;
-            font-weight: 300;
-            font-size: 1.5rem;
-            line-height: 1;
-            text-shadow: 0 0 6px #ffbb00;
-        }
-
-        /* VALORES */
         .valores-section {
             background: #0a0f17;
             border-radius: 20px;
@@ -281,7 +262,6 @@
             font-size: 1.2rem;
         }
 
-        /* SERVICIO FIORIO - TÍTULO MÁS GRANDE */
         .servicio-fiorio-header {
             display: flex;
             justify-content: space-between;
@@ -293,15 +273,10 @@
         .servicio-fiorio-titulo {
             color: #ffd966;
             font-weight: 800;
-            letter-spacing: 2px;
             font-size: 1.4rem;
             display: flex;
             align-items: center;
             gap: 10px;
-        }
-
-        .servicio-fiorio-titulo i {
-            font-size: 1.6rem;
         }
 
         .servicio-fiorio-telefono {
@@ -314,12 +289,6 @@
             border: 1px solid #5f7a8f;
         }
 
-        .servicio-fiorio-telefono i {
-            margin-right: 6px;
-            color: #ffc107;
-        }
-
-        /* SERVICIOS */
         .servicios-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -337,8 +306,7 @@
             gap: 0.7rem;
             color: #e6eef5;
             font-weight: 500;
-            font-size: 0.98rem;
-            transition: all 0.15s;
+            transition: 0.15s;
             box-shadow: 0 3px 0 #0a0e14;
         }
 
@@ -346,17 +314,14 @@
             color: #ffc107;
             font-size: 1.1rem;
             width: 1.5rem;
-            text-align: center;
         }
 
         .servicio-item:hover {
             background: #1f2e3c;
             border-color: #ffd966;
             transform: translateY(-2px);
-            box-shadow: 0 5px 0 #0a0e14, 0 0 12px #ffb34755;
         }
 
-        /* === HORARIOS - BIEN DISTRIBUIDO === */
         .horarios {
             background: #0e141f;
             border-radius: 30px;
@@ -376,28 +341,19 @@
             color: #ffd966;
         }
 
-        .horario-item i {
-            font-size: 1.3rem;
-            width: 24px;
-            text-align: center;
-        }
-
         .horario-item span {
             color: #e0eaf1;
             font-weight: 600;
-            font-size: 0.95rem;
         }
 
-        /* SELLO DOMINICANO */
         .sello-dominicano {
             display: flex;
             align-items: center;
             justify-content: flex-end;
             margin: 1.2rem 0 0.5rem;
-            font-size: 0.9rem;
-            color: #b4c8d9;
             gap: 1.2rem;
             flex-wrap: wrap;
+            color: #b4c8d9;
         }
 
         .badge-calib {
@@ -405,11 +361,10 @@
             padding: 0.35rem 1.1rem;
             border-radius: 30px;
             border: 1px solid #f9a825;
-            font-weight: 600;
             color: #ffe082;
+            font-weight: 600;
         }
 
-        /* === FOOTER COMPLETO - REDES BIEN SEPARADAS === */
         .menu-footer {
             background: #080c11;
             border-top: 1px solid #2a3847;
@@ -440,7 +395,6 @@
             align-items: center;
             gap: 12px;
             margin-bottom: 0.9rem;
-            font-size: 0.95rem;
         }
 
         .footer-col a:hover {
@@ -451,7 +405,6 @@
         .footer-col i {
             color: #ffc107;
             width: 22px;
-            font-size: 1.1rem;
         }
 
         .copyright {
@@ -459,10 +412,8 @@
             padding-top: 1.8rem;
             border-top: 1px solid #2a3847;
             color: #8a9aa8;
-            font-size: 0.85rem;
         }
 
-        /* === BOTONES FLOTANTES === */
         .floating-buttons {
             position: fixed;
             bottom: 30px;
@@ -483,29 +434,17 @@
             font-size: 2.2rem;
             color: white;
             box-shadow: 0 10px 20px rgba(0,0,0,0.25);
-            transition: 0.25s;
             text-decoration: none;
         }
 
-        .btn-wa {
-            background: #25d366;
-        }
-
-        .btn-call {
-            background: #0a3144;
-            border: 2px solid #ffc107;
-        }
-
-        .btn-wa:hover, .btn-call:hover {
-            transform: scale(1.15);
-        }
+        .btn-wa { background: #25d366; }
+        .btn-call { background: #0a3144; border: 2px solid #ffc107; }
 
         @media (max-width: 700px) {
             .header-premium { flex-direction: column; align-items: start; gap: 0.8rem; }
-            .mision-vision-unico { flex-direction: column; align-items: flex-start; }
-            .separador-miv { display: none; }
-            .horarios { flex-direction: column; align-items: flex-start; gap: 1rem; }
-            .servicio-fiorio-header { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
+            .servicio-fiorio-header { flex-direction: column; align-items: flex-start; }
+            .horarios { flex-direction: column; align-items: flex-start; }
+            .menu-contenido a { font-size: 1.8rem; }
         }
     </style>
 </head>
@@ -514,32 +453,49 @@
     <!-- TARJETA PRINCIPAL -->
     <div class="digital-card">
 
-        <!-- HEADER CON MENÚ HAMBURGUESA -->
+        <!-- HEADER CON MENÚ -->
         <div class="header-premium">
-            <div class="logo-titulo">
-                <span class="titulo-acero">ACERO</span>
-                <span class="ampersand">&</span>
-                <span class="subtitulo-gas">GAS</span>
+            <div style="display: flex; align-items: center;">
+                <i class="fas fa-bolt" style="color: #ffc107; font-size: 1.8rem; margin-right: 10px;"></i>
+                <span style="color: white; font-weight: 700;">FIDIO FIORIO</span>
             </div>
             <div class="menu-toggle" id="menuToggle">
                 <i class="fas fa-bars"></i>
             </div>
         </div>
 
-        <!-- OVERLAY MENÚ - CORREGIDO CENTRADO VERTICAL -->
+        <!-- MENÚ CORREGIDO - LETRAS GIGANTES Y CENTRADO -->
         <div class="overlay" id="menuOverlay">
             <div class="cerrar-menu" id="cerrarMenu">
                 <i class="fas fa-times"></i>
             </div>
             <div class="menu-contenido">
                 <ul>
-                    <li><a href="#inicio"><i class="fas fa-home"></i> Inicio</a></li>
-                    <li><a href="#servicios"><i class="fas fa-tools"></i> Servicios</a></li>
-                    <li><a href="#valores"><i class="fas fa-star"></i> Valores</a></li>
-                    <li><a href="#contacto"><i class="fas fa-phone-alt"></i> Contacto</a></li>
-                    <li><a href="tel:3124672533"><i class="fas fa-phone"></i> Llamar</a></li>
-                    <li><a href="https://wa.me/573124672533" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+                    <li><a href="#inicio"><i class="fas fa-home"></i> INICIO</a></li>
+                    <li><a href="#servicios"><i class="fas fa-tools"></i> SERVICIOS</a></li>
+                    <li><a href="#valores"><i class="fas fa-star"></i> VALORES</a></li>
+                    <li><a href="#contacto"><i class="fas fa-phone-alt"></i> CONTACTO</a></li>
+                    <li><a href="tel:3124672533"><i class="fas fa-phone"></i> LLAMAR</a></li>
+                    <li><a href="https://wa.me/573124672533" target="_blank"><i class="fab fa-whatsapp"></i> WHATSAPP</a></li>
                 </ul>
+            </div>
+        </div>
+
+        <!-- === HERO ÉPICO DE BIENVENIDA CON LOGO === -->
+        <div class="hero-bienvenida">
+            <div class="logo-container">
+                <!-- LOGO REAL - RUTA CORRECTA -->
+                <img src="https://raw.githubusercontent.com/Elis-suarez/acero&gas/main/logotipo-acero-gas.png" 
+                     alt="Acero & Gas" 
+                     class="logo-principal"
+                     onerror="this.src='https://raw.githubusercontent.com/Elis-suarez/acero&gas/main/logo.png'; this.onerror=null;">
+                
+                <h1 class="bienvenida-titulo">
+                    ¡BIENVENIDO!
+                </h1>
+                <span class="bienvenida-sub">
+                    <i class="fas fa-certificate"></i> CALIDAD INDUSTRIAL DESDE 1985 <i class="fas fa-certificate"></i>
+                </span>
             </div>
         </div>
 
@@ -555,12 +511,12 @@
                     <span class="miv-badge">M</span>
                     <span class="miv-texto">Innovación en acero inoxidable</span>
                 </div>
-                <span class="separador-miv">⏤⎯⏤</span>
+                <span style="color:#ffc107; font-size:1.5rem;">⏤⎯⏤</span>
                 <div class="miv-item">
                     <span class="miv-badge">V</span>
                     <span class="miv-texto">Líderes en Centroamérica</span>
                 </div>
-                <span class="separador-miv">✦</span>
+                <span style="color:#ffc107; font-size:1.5rem;">✦</span>
                 <div class="miv-item">
                     <i class="fas fa-trophy" style="color:#ffc107;"></i>
                     <span style="font-weight:600; color:#ffdb9f;">Excelencia desde 1985</span>
@@ -580,7 +536,7 @@
                 </div>
             </div>
 
-            <!-- SERVICIO FIORIO - TÍTULO MÁS GRANDE -->
+            <!-- SERVICIO FIORIO -->
             <div class="servicio-fiorio-header">
                 <span class="servicio-fiorio-titulo">
                     <i class="fas fa-tools"></i> SERVICIO FIORIO
@@ -602,7 +558,7 @@
                 <div class="servicio-item"><i class="fas fa-fire"></i> Quemadores / Gas</div>
             </div>
 
-            <!-- HORARIOS - BIEN DISTRIBUIDO -->
+            <!-- HORARIOS -->
             <div class="horarios">
                 <div class="horario-item">
                     <i class="fas fa-clock"></i>
@@ -625,7 +581,7 @@
             </div>
         </div>
 
-        <!-- FOOTER COMPLETO - REDES BIEN SEPARADAS -->
+        <!-- FOOTER -->
         <div class="menu-footer" id="contacto">
             <div class="footer-grid">
                 <div class="footer-col">
@@ -636,10 +592,8 @@
                 </div>
                 <div class="footer-col">
                     <h4>HORARIOS</h4>
-                    <p><i class="fas fa-calendar"></i> Lunes a Viernes</p>
-                    <p style="margin-left: 34px;">7:00 AM - 6:00 PM</p>
-                    <p><i class="fas fa-calendar"></i> Sábados</p>
-                    <p style="margin-left: 34px;">8:00 AM - 2:00 PM</p>
+                    <p><i class="fas fa-calendar"></i> Lunes a Viernes: 7am-6pm</p>
+                    <p><i class="fas fa-calendar"></i> Sábados: 8am-2pm</p>
                     <p><i class="fas fa-clock"></i> Domingos: Cerrado</p>
                 </div>
                 <div class="footer-col">
@@ -651,7 +605,7 @@
             </div>
             <div class="copyright">
                 <p>© 2026 Acero & Gas · Fidio Fiorio · Todos los derechos reservados</p>
-                <p style="margin-top: 0.6rem; font-size: 0.8rem;">Industria Metalmecánica · República Dominicana · Calidad en Acero Inoxidable</p>
+                <p style="margin-top: 0.6rem;">Industria Metalmecánica · República Dominicana</p>
             </div>
         </div>
     </div>
@@ -666,30 +620,16 @@
         </a>
     </div>
 
-    <!-- JAVASCRIPT MENÚ -->
     <script>
         const menuToggle = document.getElementById('menuToggle');
         const overlay = document.getElementById('menuOverlay');
         const cerrar = document.getElementById('cerrarMenu');
 
-        menuToggle.addEventListener('click', () => {
-            overlay.classList.add('active');
-        });
-
-        cerrar.addEventListener('click', () => {
-            overlay.classList.remove('active');
-        });
-
-        overlay.addEventListener('click', (e) => {
-            if (e.target === overlay) {
-                overlay.classList.remove('active');
-            }
-        });
-
+        menuToggle.addEventListener('click', () => overlay.classList.add('active'));
+        cerrar.addEventListener('click', () => overlay.classList.remove('active'));
+        overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.classList.remove('active'); });
         document.querySelectorAll('.menu-contenido a').forEach(link => {
-            link.addEventListener('click', () => {
-                overlay.classList.remove('active');
-            });
+            link.addEventListener('click', () => overlay.classList.remove('active'));
         });
     </script>
 </body>
